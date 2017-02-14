@@ -31,8 +31,6 @@ var paths = {
   others: ['.htaccess', 'robots.txt']
 };
 
-gulp.task('prod', ['copy', 'js', 'img', 'css']);
-
 gulp.task('clean', function() {
   return gulp.src(bases.dist)
     .pipe(clean());
@@ -96,13 +94,6 @@ gulp.task('img', function() {
 });
 
 gulp.task('critical', function() {
-  return gulp.src(bases.dist + '*.html')
-    .pipe(critical({ base: bases.dist, inline: true }))
-    .on('error', function(err) { gutil.log(gutil.colors.red(err.message)); })
-    .pipe(gulp.dest(bases.dist));
-});
-
-gulp.task('critical', function() {
   critical.generate({
     base: bases.dist,
     src: 'index.html',
@@ -132,6 +123,9 @@ gulp.task('browserSync', function() {
     },
   })
 });
+
+// Production task
+gulp.task('prod', ['copy', 'js', 'css', 'img', 'critical']);
 
 // Watch over file changes
 gulp.task('watch', ['browserSync'], function() {
