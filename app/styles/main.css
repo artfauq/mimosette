@@ -186,6 +186,7 @@ section,
 
 #logo-mimosette {
   width: 100%;
+  
 }
 
 .carousel,
@@ -258,6 +259,10 @@ section,
 
   #maps {
     margin-bottom: 30px;
+  }
+
+  #logo-mimosette {
+    margin-top: 20px;
   }
 
   .row.flex-box {

@@ -258,6 +258,10 @@ section,
     margin-bottom: 30px;
   }
 
+  #logo-mimosette {
+    margin-top: 20px;
+  }
+
   .row.flex-box {
     display: block;
   }
