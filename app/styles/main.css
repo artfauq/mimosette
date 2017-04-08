@@ -283,18 +283,22 @@ section,
 @media screen and (max-width:320px) {
   #home {
     background: url('../images/plages/img_7-320.jpg') no-repeat fixed center;
+    background-size: cover;
   }
 
   #localisation::after {
     background: url('../images/voir/img_1-320.jpg') no-repeat fixed center;
+    background-size: cover;
   }
 
   #plages::after {
     background: url('../images/plages/img_1-320.jpg') no-repeat fixed center;
+    background-size: cover;
   }
 
   #voir::after {
     background: url('../images/plages/img_4-320.jpg') no-repeat fixed center;
+    background-size: cover;
   }
 
 }
@@ -302,18 +306,22 @@ section,
 @media screen and (max-width:640px) {
   #home {
     background: url('../images/plages/img_7-640.jpg') no-repeat fixed center;
+    background-size: cover;
   }
 
   #localisation::after {
     background: url('../images/voir/img_1-640.jpg') no-repeat fixed center;
+    background-size: cover;
   }
 
   #plages::after {
     background: url('../images/plages/img_1-640.jpg') no-repeat fixed center;
+    background-size: cover;
   }
 
   #voir::after {
     background: url('../images/plages/img_4-640.jpg') no-repeat fixed center;
+    background-size: cover;
   }
 
 }
@@ -321,18 +329,22 @@ section,
 @media screen and (max-width:1280px) {
   #home {
     background: url('../images/plages/img_7-1280.jpg') no-repeat fixed center;
+    background-size: cover;
   }
 
   #localisation::after {
     background: url('../images/voir/img_1-1280.jpg') no-repeat fixed center;
+    background-size: cover;
   }
 
   #plages::after {
     background: url('../images/plages/img_1-1280.jpg') no-repeat fixed center;
+    background-size: cover;
   }
 
   #voir::after {
     background: url('../images/plages/img_4-1280.jpg') no-repeat fixed center;
+    background-size: cover;
   }
 
 }
@@ -340,18 +352,22 @@ section,
 @media screen and (min-width:1281px) {
   #home {
     background: url('../images/plages/img_7-1600-blurred.jpg') no-repeat fixed center;
+    background-size: cover;
   }
 
   #localisation::after {
     background: url('../images/voir/img_1-1500.jpg') no-repeat fixed center;
+    background-size: cover;
   }
 
   #plages::after {
     background: url('../images/plages/img_1-1500.jpg') no-repeat fixed center;
+    background-size: cover;
   }
 
   #voir::after {
     background: url('../images/plages/img_4-1500.jpg') no-repeat fixed center;
+    background-size: cover;
   }
 
 }
