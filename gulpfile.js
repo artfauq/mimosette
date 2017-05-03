@@ -1,135 +1,108 @@
 var gulp = require('gulp');
 var gutil = require('gulp-util');
-
-var concat = require('gulp-concat');
-var jshint = require('gulp-jshint');
+var gulpif = require('gulp-if');
 var clean = require('gulp-clean');
-var sass = require('gulp-sass');
-var csscomb = require('gulp-csscomb');
-var cssbeautify = require('gulp-cssbeautify');
-var autoprefixer = require('gulp-autoprefixer');
-var csso = require('gulp-csso');
-var rename = require('gulp-rename');
-var imagemin = require('gulp-imagemin');
-var browserSync = require('browser-sync');
+var watch = require('gulp-watch');
 var useref = require('gulp-useref');
+var browserSync = require('browser-sync').create();
+var sass = require('gulp-sass');
+var jshint = require('gulp-jshint');
 var uglify = require('gulp-uglify');
-var filesize = require('gulp-filesize');
-var critical = require('critical');
+var imagemin = require('gulp-imagemin');
+var autoprefixer = require('gulp-autoprefixer');
+var cleanCSS = require('gulp-clean-css');
+var runSequence = require('run-sequence');
 
 var bases = {
-  app: 'app/',
-  dist: 'dist/',
+    app: 'app/',
+    dist: 'dist/'
 };
 
 var paths = {
-  scripts: ['scripts/**/*.js'],
-  styles: ['styles/*.css'],
-  html: ['*.html'],
-  images: ['images/**/*.*'],
-  fonts: ['fonts/*.*'],
-  others: ['.htaccess', 'robots.txt']
+    css: './css/**/*.css',
+    fonts: './fonts/**/*.*',
+    html: './index.html',
+    images: './images/**/*.*',
+    others: ['browserconfig.xml', 'manifest.json', '.htaccess', 'google46e54d9618da9e3c.html', 'robots.txt'],
+    scripts: './js/**/*.js',
+    scss: './styles/scss/**/*.scss'
 };
 
-gulp.task('clean', function() {
-  return gulp.src(bases.dist)
-    .pipe(clean());
-});
-
-gulp.task('copy', ['clean'], function() {
-
-  gulp.src(paths.html, { cwd: bases.app })
-    .pipe(gulp.dest(bases.dist));
-
-  gulp.src(paths.fonts, { cwd: bases.app })
-    .pipe(gulp.dest(bases.dist + 'fonts/'));
-
-  gulp.src(paths.others, { cwd: bases.app })
-    .pipe(gulp.dest(bases.dist));
-});
-
-gulp.task('css', function() {
-  return gulp.src(paths.styles, { cwd: bases.app })
-    .pipe(csscomb())
-    .pipe(cssbeautify({ indent: '  ' }))
-    .pipe(autoprefixer())
-    .pipe(gulp.dest(bases.dist + 'styles/'))
-    .pipe(csso())
-    .pipe(rename({
-      suffix: '.min'
-    }))
-    .pipe(gulp.dest(bases.dist + 'styles/'));
+gulp.task('jshint', function() {
+    gulp.src(paths.scripts, { cwd: bases.app })
+        .pipe(jshint())
+        .pipe(jshint.reporter('jshint-stylish'));
 });
 
 gulp.task('sass', function() {
-  return gulp.src(paths.styles)
-    .pipe(sass().on('error', sass.logError))
-    .pipe(csscomb())
-    .pipe(cssbeautify({ indent: '  ' }))
-    .pipe(autoprefixer())
-    .pipe(gulp.dest(paths.styles))
-    .pipe(browserSync.reload({
-      stream: true
-    }));
-})
-
-gulp.task('js', function() {
-  return gulp.src(paths.scripts, { cwd: bases.app })
-    .pipe(concat('main.js'))
-    .pipe(jshint())
-    .pipe(jshint.reporter('default'))
-    .pipe(gulp.dest(bases.dist + 'scripts/'))
-    .pipe(filesize())
-    .pipe(uglify())
-    .pipe(rename('main.min.js'))
-    .pipe(gulp.dest(bases.dist + 'scripts/'))
-    .pipe(filesize())
-    .on('error', gutil.log);
+    return gulp.src(paths.scss, { cwd: bases.app })
+        .pipe(sass().on('error', sass.logError))
+        .pipe(gulp.dest(bases.app + '/styles/css/'));
 });
 
-gulp.task('img', function() {
-  return gulp.src(paths.images, { cwd: bases.app })
-    .pipe(imagemin())
-    .pipe(gulp.dest(bases.dist + 'images/'));
+gulp.task('scripts', function() {
+    return gulp.src(paths.scripts, { cwd: bases.dist })
+        .pipe(uglify())
+        .pipe(gulp.dest('js/', { cwd: bases.dist }));
 });
 
-gulp.task('critical', function() {
-  critical.generate({
-    base: bases.dist,
-    src: 'index.html',
-    inline: true,
-    css: [bases.dist + 'styles/main.min.css', bases.dist + 'styles/bootstrap.min.css'],
-    dimensions: [{
-      width: 320,
-      height: 480
-    }, {
-      width: 768,
-      height: 1024
-    }, {
-      width: 1280,
-      height: 960
-    }],
-    dest: 'index-critical.html',
-    minify: true,
-    extract: false,
-    ignore: ['font-face'],
-  })
+gulp.task('styles', function() {
+    return gulp.src(paths.css, { cwd: bases.dist })
+        .pipe(autoprefixer())
+        .pipe(cleanCSS())
+        .pipe(gulp.dest('css/', { cwd: bases.dist }));
 });
 
-gulp.task('browserSync', function() {
-  browserSync({
-    server: {
-      baseDir: bases.app
-    },
-  })
+// Copy tasks
+gulp.task('fonts', function() {
+    return gulp.src(paths.fonts, { cwd: bases.app })
+        .pipe(gulp.dest(bases.dist + '/fonts'));
 });
 
-// Production task
-gulp.task('prod', ['copy', 'js', 'css', 'img', 'critical']);
+gulp.task('html', function() {
+    return gulp.src(paths.html, { cwd: bases.app })
+        .pipe(useref())
+        .pipe(gulp.dest(bases.dist));
+});
 
-// Watch over file changes
-gulp.task('watch', ['browserSync'], function() {
-  gulp.watch(paths.styles, ['sass']);
-  gulp.watch(paths.html, browserSync.reload);
-  gulp.watch(paths.scripts, browserSync.reload);
+gulp.task('images', function() {
+    return gulp.src(paths.images, { cwd: bases.app })
+        .pipe(imagemin())
+        .pipe(gulp.dest(bases.dist + '/images'));
+});
+
+gulp.task('others', function() {
+    return gulp.src(paths.others, { cwd: bases.app })
+        .pipe(gulp.dest(bases.dist));
+});
+
+// Clean task
+gulp.task('clean:dist', function() {
+    return gulp.src(bases.dist, { read: false })
+        .pipe(clean());
+});
+
+// Build task
+gulp.task('build', function(cb) {
+    runSequence('clean:dist', ['sass', 'jshint'], ['html', 'fonts', 'others', 'images'], ['styles', 'scripts'], 'serve:dist', cb);
+});
+
+
+// Serve tasks
+gulp.task('serve', function() {
+    browserSync.init({
+        server: 'app/',
+        port: 8080
+    });
+
+    gulp.watch(bases.app + paths.html).on('change', browserSync.reload);
+    gulp.watch(bases.app + paths.scss, ['sass']).on('change', browserSync.reload);
+    gulp.watch(bases.app + paths.scripts).on('change', browserSync.reload);
+});
+
+gulp.task('serve:dist', function() {
+    browserSync.init({
+        server: 'dist/',
+        port: 8080
+    });
 });

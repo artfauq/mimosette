@@ -1,0 +1,371 @@
+nav {
+  border-top: 3px solid #ff9070 !important;
+  display: block;
+  font-size: 0;
+  padding-right: 5%; }
+
+.nav-link {
+  color: #202020;
+  display: inline-block;
+  transition: background-color .1s;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  padding: 10px 20px; }
+
+.nav-link:hover:not(.active-link) {
+  background-color: rgba(255, 144, 112, 0.6);
+  transition: background-color .2s; }
+
+.nav-link:hover:not(.active-link),
+.nav-link:focus:not(.active-link),
+.nav-link:active:not(.active-link) {
+  color: #202020; }
+
+.active-link {
+  color: #fff !important;
+  background-color: #ff9070;
+  transition: color .15s, background-color .2s; }
+
+.nav-icon {
+  display: none; }
+
+@media screen and (max-width: 768px) {
+  nav.responsive {
+    height: 100%;
+    position: fixed;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: background-color .5s; }
+  nav.responsive .nav-link {
+    display: block; }
+  .nav-link {
+    width: 100%;
+    text-align: center;
+    text-align: center;
+    display: none;
+    font-size: 18px;
+    color: #fff;
+    letter-spacing: 1px;
+    padding: 30px; }
+  .nav-icon {
+    position: absolute;
+    font-size: 35px;
+    padding: 25px;
+    right: 0;
+    top: 0;
+    display: block;
+    color: rgba(0, 0, 0, 0.8); }
+  .nav-icon:hover,
+  .nav-icon:focus,
+  .nav-icon:active {
+    color: inherit; }
+  .nav-icon i {
+    transition: all .5s ease; }
+  nav.responsive .nav-icon {
+    color: #fff; } }
+
+.cd-top {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  position: fixed;
+  z-index: 1000;
+  bottom: 45px;
+  right: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  background: rgba(255, 144, 112, 0.8) url("../../images/icons/arrow.png") no-repeat center;
+  background-size: cover;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .5s 0s, visibility 0s .5s; }
+
+.cd-top.cd-is-visible,
+.cd-top.cd-fade-out,
+.no-touch .cd-top:hover {
+  transition: opacity .5s 0s, visibility 0s 0s; }
+
+.cd-top.cd-is-visible {
+  visibility: visible;
+  opacity: 1; }
+
+.cd-top.cd-fade-out {
+  opacity: .5; }
+
+.no-touch .cd-top:hover {
+  background-color: #e86256;
+  opacity: 1; }
+
+@media only screen and (min-width: 768px) {
+  .cd-top {
+    right: 20px;
+    bottom: 50px; } }
+
+@media only screen and (min-width: 992px) {
+  .cd-top {
+    height: 50px;
+    width: 50px;
+    right: 30px;
+    bottom: 60px; } }
+
+@font-face {
+  font-family: "Alex Brush";
+  src: url("../../fonts/AlexBrush-Regular.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Josefin Sans";
+  src: url("../../fonts/JosefinSans-Regular.ttf") format("truetype"); }
+
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+  margin: 0; }
+
+a {
+  color: inherit; }
+  a, a:hover, a:focus, a:visited, a:active {
+    text-decoration: none; }
+
+h1 {
+  font-family: 'Alex Brush', cursive;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  font-size: 6em;
+  font-weight: bold;
+  margin: 0;
+  -webkit-transform: rotate(-20deg);
+  transform: rotate(-20deg);
+  color: rgba(255, 255, 255, 0.95); }
+
+h2,
+h3 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: normal;
+  letter-spacing: 1.2px; }
+
+h2 {
+  font-size: 3.2em;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase; }
+
+h3 {
+  font-size: 2.8em;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd; }
+
+h4 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ddd; }
+
+hr,
+p {
+  margin: 0; }
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.anchor {
+  position: relative;
+  display: block;
+  visibility: hidden; }
+
+section,
+.sub-section {
+  min-height: 112vh; }
+
+.container-fluid {
+  padding: 0; }
+
+.flexbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.h-align {
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+
+.row.flex-box {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  margin-bottom: 30px; }
+
+.shadow {
+  box-shadow: 0 0 15px -2px #444; }
+
+.text-zone {
+  font-size: 16px;
+  line-height: 28px; }
+
+#home {
+  min-height: 100vh;
+  background-size: cover; }
+  #home .text-center {
+    width: 100%;
+    margin: auto; }
+
+#next-button {
+  width: 50px;
+  height: 50px;
+  margin: 20px auto;
+  transition: opacity .3s;
+  animation: nextButtonAnimation 1.5s infinite;
+  opacity: .7;
+  background: url("../../images/icons/arrow-icon-white.png") no-repeat center;
+  background-size: contain; }
+  #next-button:hover {
+    transition: opacity .3s;
+    opacity: 1; }
+
+@keyframes nextButtonAnimation {
+  0% {
+    -webkit-transform: translate(0, -30px);
+    transform: translate(0, -30px);
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+    opacity: 0; } }
+
+#maps {
+  min-height: 50vh; }
+
+#logo-mimosette {
+  width: 100%; }
+
+.carousel,
+.carousel-inner > .item {
+  height: auto !important; }
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  line-height: 1;
+  display: block;
+  max-width: 100%;
+  height: auto; }
+
+.carousel-container {
+  margin-left: 0; }
+
+.carousel-control.right,
+.carousel-control.left {
+  background-image: none; }
+
+#localisation,
+#plages,
+#voir {
+  position: relative;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.2); }
+
+#localisation::after,
+#plages::after,
+#voir::after {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: '';
+  background-size: cover; }
+
+@media screen and (max-width: 992px) {
+  h1 {
+    font-size: 4em; }
+  h2 {
+    font-size: 2.5em;
+    margin-top: 30px; }
+  h3 {
+    font-size: 2em;
+    margin: 20px 0px; }
+  #home .text-center {
+    padding-bottom: 30px; }
+  .carousel {
+    margin-top: 30px; }
+  #maps {
+    margin-bottom: 30px; }
+  #logo-mimosette {
+    margin-top: 20px; }
+  .h-align {
+    display: block; }
+  .shadow {
+    box-shadow: none; }
+  .box {
+    padding-top: 50px;
+    padding-bottom: 50px; }
+  .text-zone {
+    font-size: 16px;
+    line-height: 25px;
+    margin-bottom: 20px; } }
+
+@media screen and (max-width: 320px) {
+  #home {
+    background: url("../../images/plages/img_7-320.jpg") no-repeat fixed center;
+    background-size: cover; }
+  #localisation::after {
+    background: url("../../images/voir/img_1-320.jpg") no-repeat fixed center;
+    background-size: cover; }
+  #plages::after {
+    background: url("../../images/plages/img_1-320.jpg") no-repeat fixed center;
+    background-size: cover; }
+  #voir::after {
+    background: url("../../images/plages/img_4-320.jpg") no-repeat fixed center;
+    background-size: cover; } }
+
+@media screen and (max-width: 640px) {
+  #home {
+    background: url("../../images/plages/img_7-640.jpg") no-repeat fixed center;
+    background-size: cover; }
+  #localisation::after {
+    background: url("../../images/voir/img_1-640.jpg") no-repeat fixed center;
+    background-size: cover; }
+  #plages::after {
+    background: url("../../images/plages/img_1-640.jpg") no-repeat fixed center;
+    background-size: cover; }
+  #voir::after {
+    background: url("../../images/plages/img_4-640.jpg") no-repeat fixed center;
+    background-size: cover; } }
+
+@media screen and (max-width: 1280px) {
+  #home {
+    background: url("../../images/plages/img_7-1280.jpg") no-repeat fixed center;
+    background-size: cover; }
+  #localisation::after {
+    background: url("../../images/voir/img_1-1280.jpg") no-repeat fixed center;
+    background-size: cover; }
+  #plages::after {
+    background: url("../../images/plages/img_1-1280.jpg") no-repeat fixed center;
+    background-size: cover; }
+  #voir::after {
+    background: url("../../images/plages/img_4-1280.jpg") no-repeat fixed center;
+    background-size: cover; } }
+
+@media screen and (min-width: 1281px) {
+  #home {
+    background: url("../../images/plages/img_7-1600-blurred.jpg") no-repeat fixed center;
+    background-size: cover; }
+  #localisation::after {
+    background: url("../../images/voir/img_1-1500.jpg") no-repeat fixed center;
+    background-size: cover; }
+  #plages::after {
+    background: url("../../images/plages/img_1-1500.jpg") no-repeat fixed center;
+    background-size: cover; }
+  #voir::after {
+    background: url("../../images/plages/img_4-1500.jpg") no-repeat fixed center;
+    background-size: cover; } }
