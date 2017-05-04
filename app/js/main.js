@@ -1,20 +1,3 @@
-// Google Maps variables
-var myLatLng = {
-    lat: 47.018927,
-    lng: -2.245554
-};
-
-var map = new google.maps.Map(document.getElementById("maps"), {
-    zoom: 13,
-    center: myLatLng,
-    mapTypeId: google.maps.MapTypeId.SATELLITE
-});
-
-var marker = new google.maps.Marker({
-    position: myLatLng,
-    map: map
-});
-
 // Navicon rotation
 var rotation = 0;
 
@@ -33,18 +16,16 @@ $(document).ready(function() {
             }
         });
 
-        // On scroll, change active navigation link and back to top button
         $(window).scroll(function() {
             activeNavLink();
             backToTop();
         });
 
-        window.addEventListener('orientationchange', doOnOrientationChange);
+        $(window).resize(function() {
+            owlWrapperWidth($('.owl-wrapper'));
+        });
 
-        $('#home').parallax("center", 0.25, true);
-        $('#localisation').parallax("center", 0.25, true);
-        $('#plages').parallax("center", 0.25, true);
-        $('#voir').parallax("center", 0.25, true);
+        window.addEventListener('orientationchange', doOnOrientationChange);
     });
 });
 
@@ -55,6 +36,11 @@ function initialize() {
             $('section, .sub-section').css('min-height', windowHeight + (windowHeight / 5) + 'px');
             $('#maps').css('min-height', windowHeight / 2 + 'px');
         }
+    } else {
+        $('#home').parallax("center", 0.25, true);
+        $('#localisation').parallax("center", 0.25, true);
+        $('#plages').parallax("center", 0.25, true);
+        $('#voir').parallax("center", 0.25, true);
     }
 
     /// Activate responsive nav on click
@@ -64,18 +50,31 @@ function initialize() {
         $(this).css('top', navHeight);
     });
 
-    $('.carousel').carousel();
+    // trigger on start and resize
+    owlWrapperWidth('.owl-wrapper');
 
-    $(".left").click(function() {
-        $(this).parent().carousel("prev");
-    });
-
-    $(".right").click(function() {
-        $(this).parent().carousel("next");
+    $('.owl-carousel').owlCarousel({
+        items: 1,
+        startPosition: 5,
+        margin: 10,
+        autoplay: true,
+        autoplayTimeout: 4000,
+        autoplayHoverPause: true,
+        stagePadding: 50,
+        center: true,
+        nav: true,
+        autoWidth: false
     });
 
     activeNavLink();
     backToTop();
+}
+
+// set owl-carousel width equals to owl-wrapper width
+function owlWrapperWidth(selector) {
+    $(selector).each(function() {
+        $(this).find('.owl-carousel').outerWidth($(this).closest(selector).innerWidth());
+    });
 }
 
 // Back to top button fade in and out
