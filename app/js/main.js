@@ -31,53 +31,50 @@ $(document).ready(function() {
 
 function initialize() {
     if (mobileCheck()) {
-        if (getMobileOperatingSystem() == 'Android') {
-            var windowHeight = $(window).outerHeight();
-            $('section, .sub-section').css('min-height', windowHeight + (windowHeight / 5) + 'px');
-            $('#maps').css('min-height', windowHeight / 2 + 'px');
-        }
+        landscapeProperties();
     } else {
-        $('#home').parallax("center", 0.25, true);
-        $('#localisation').parallax("center", 0.25, true);
-        $('#plages').parallax("center", 0.25, true);
-        $('#voir').parallax("center", 0.25, true);
+        $('.background-section').each(function() {
+            $(this).parallax("center", 0.25, true);
+        });
     }
 
-    /// Activate responsive nav on click
-    $('.anchor').each(function() {
-        var navHeight = $('nav').css('border-top-width');
-        navHeight = navHeight + 'px';
-        $(this).css('top', navHeight);
-    });
-
-    // trigger on start and resize
     owlWrapperWidth('.owl-wrapper');
 
     $('.owl-carousel').owlCarousel({
         items: 1,
         startPosition: 5,
         margin: 10,
-        autoplay: true,
+        autoplay: false,
         autoplayTimeout: 4000,
         autoplayHoverPause: true,
         stagePadding: 50,
         center: true,
         nav: true,
-        autoWidth: false
+        autoWidth: false,
+        responsive: {
+            0: {
+                stagePadding: 20,
+                startPosition: 1,
+            },
+            768: {
+                stagePadding: 50,
+                startPosition: 5,
+                center: true,
+            }
+        }
     });
 
     activeNavLink();
     backToTop();
+
 }
 
-// set owl-carousel width equals to owl-wrapper width
 function owlWrapperWidth(selector) {
     $(selector).each(function() {
         $(this).find('.owl-carousel').outerWidth($(this).closest(selector).innerWidth());
     });
 }
 
-// Back to top button fade in and out
 function backToTop() {
     var offset = $('#home').outerHeight();
     var offset_opacity = $('#home').outerHeight() + $('#maison').outerHeight();
@@ -94,7 +91,6 @@ function backToTop() {
     }
 }
 
-// Define the active navigation link
 function activeNavLink() {
     $('section').each(function(index, element) {
         var section = $(element);
@@ -107,7 +103,6 @@ function activeNavLink() {
         if (windowScroll >= sectionTop && windowScroll < sectionBottom) {
             var link_name = '#lien-' + section.attr('id');
 
-            // Search of the link to highlight
             $('.nav-link').each(function(index, element) {
                 var link = $(element);
 
@@ -157,23 +152,20 @@ function mobileCheck() {
     return check;
 }
 
-function getMobileOperatingSystem() {
-    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-    if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
-        return 'iOS';
-    } else if (userAgent.match(/Android/i)) {
+function doOnOrientationChange() {
+    window.location.reload();
+    landscapeProperties();
+}
 
-        return 'Android';
-    } else {
-        return 'unknown';
+function landscapeProperties() {
+    if ($(window).height() < $(window).width()) {
+        $('#maps').css('min-height', (2 * $(window).outerHeight) / 3 + 'px');
+        $('.owl-stage, .owl-stage-outer, .owl-item, .owl-item img').css('max-height', '60vh');
+        $('.owl-item img').css('width', 'auto');
+        $('.owl-item img').css('margin', 'auto');
     }
 }
 
-function doOnOrientationChange() {
-    window.location.reload();
-}
-
-// SMOOTH SCROLL
 $(function() {
     $('a[href*="#"]:not([href="#"])').click(function() {
         if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
@@ -189,7 +181,6 @@ $(function() {
     });
 });
 
-// ROTATION FUNCTION
 jQuery.fn.rotate = function(degrees) {
     $(this).css({
         '-webkit-transform': 'rotate(' + degrees + 'deg)',
