@@ -20,6 +20,7 @@ var rotation = 0;
 
 $(document).ready(function() {
     $(window).on("load", function() {
+
         initialize();
 
         $('.nav-icon').click(function() {
@@ -39,6 +40,11 @@ $(document).ready(function() {
         });
 
         window.addEventListener('orientationchange', doOnOrientationChange);
+
+        $('#home').parallax("center", 0.25, true);
+        $('#localisation').parallax("center", 0.25, true);
+        $('#plages').parallax("center", 0.25, true);
+        $('#voir').parallax("center", 0.25, true);
     });
 });
 
