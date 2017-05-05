@@ -1,4 +1,3 @@
-// Navicon rotation
 var rotation = 0;
 
 $(document).ready(function() {
@@ -21,10 +20,6 @@ $(document).ready(function() {
             backToTop();
         });
 
-        $(window).resize(function() {
-            owlWrapperWidth($('.owl-wrapper'));
-        });
-
         window.addEventListener('orientationchange', doOnOrientationChange);
     });
 });
@@ -38,41 +33,29 @@ function initialize() {
         });
     }
 
-    owlWrapperWidth('.owl-wrapper');
-
     $('.owl-carousel').owlCarousel({
         items: 1,
-        startPosition: 5,
+        startPosition: 0,
         margin: 10,
         autoplay: false,
         autoplayTimeout: 4000,
         autoplayHoverPause: true,
         stagePadding: 50,
-        center: true,
         nav: true,
         autoWidth: false,
+        navText: ['<i class="fa fa-arrow-left" aria-hidden="true"></i>', '<i class="fa fa-arrow-right" aria-hidden="true"></i>'],
         responsive: {
             0: {
                 stagePadding: 20,
-                startPosition: 1,
             },
             768: {
-                stagePadding: 50,
-                startPosition: 5,
-                center: true,
+                stagePadding: 50
             }
         }
     });
 
     activeNavLink();
     backToTop();
-
-}
-
-function owlWrapperWidth(selector) {
-    $(selector).each(function() {
-        $(this).find('.owl-carousel').outerWidth($(this).closest(selector).innerWidth());
-    });
 }
 
 function backToTop() {
@@ -153,16 +136,13 @@ function mobileCheck() {
 }
 
 function doOnOrientationChange() {
-    window.location.reload();
     landscapeProperties();
 }
 
 function landscapeProperties() {
     if ($(window).height() < $(window).width()) {
-        $('#maps').css('min-height', (2 * $(window).outerHeight) / 3 + 'px');
-        $('.owl-stage, .owl-stage-outer, .owl-item, .owl-item img').css('max-height', '60vh');
-        $('.owl-item img').css('width', 'auto');
-        $('.owl-item img').css('margin', 'auto');
+        $('#maps').css('height', (3 * $(window).outerHeight) / 4 + 'px');
+        $('.owl-item, .owl-item img').css('max-width', '55vw');
     }
 }
 

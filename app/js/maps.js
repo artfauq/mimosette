@@ -4,9 +4,9 @@ var myLatLng = {
 };
 
 var map = new google.maps.Map(document.getElementById("maps"), {
-    zoom: 13,
+    zoom: 11,
     center: myLatLng,
-    mapTypeId: google.maps.MapTypeId.SATELLITE
+    mapTypeId: google.maps.MapTypeId.ROADMAP
 });
 
 var marker = new google.maps.Marker({

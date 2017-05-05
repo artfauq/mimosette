@@ -65,34 +65,31 @@ section,
     transform: translate(0px, 0px);
     opacity: 0; } }
 
-#maison .owl-wrapper .owl-carousel {
-  max-width: 100vw;
+#maison .owl-carousel {
+  max-width: 80vw;
   margin: auto; }
-  #maison .owl-wrapper .owl-carousel .owl-nav {
+  #maison .owl-carousel .owl-item:hover {
+    cursor: -webkit-grab; }
+  #maison .owl-carousel .owl-nav {
     text-align: center; }
-    #maison .owl-wrapper .owl-carousel .owl-nav div {
+    #maison .owl-carousel .owl-nav div {
       display: inline-block;
       margin: 8px;
       text-transform: uppercase;
       border-radius: 5px;
-      padding: 5px 8px;
+      padding: 5px 15px;
       color: #fff;
-      background-color: #ffb8a3;
-      transition: all .1s; }
-      #maison .owl-wrapper .owl-carousel .owl-nav div:focus, #maison .owl-wrapper .owl-carousel .owl-nav div:active {
-        background-color: #ffb8a3; }
-      #maison .owl-wrapper .owl-carousel .owl-nav div:hover {
-        background-color: #ff9070; }
-  #maison .owl-wrapper .owl-carousel .owl-dots {
+      background-color: #ff9070; }
+  #maison .owl-carousel .owl-dots {
     text-align: center; }
-    #maison .owl-wrapper .owl-carousel .owl-dots .owl-dot {
+    #maison .owl-carousel .owl-dots .owl-dot {
       display: inline-block;
       margin: 0px 7px;
       width: 10px;
       height: 10px;
       border-radius: 10px;
       background-color: #ffdfd6; }
-      #maison .owl-wrapper .owl-carousel .owl-dots .owl-dot.active {
+      #maison .owl-carousel .owl-dots .owl-dot.active {
         background-color: #ff9070; }
 
 #localisation #maps {
@@ -169,7 +166,8 @@ nav {
   border-top: 3px solid #ff9070 !important;
   display: block;
   font-size: 0;
-  padding-right: 5%; }
+  padding-right: 5%;
+  z-index: 10; }
 
 .nav-link {
   color: #202020;
@@ -212,12 +210,11 @@ nav {
     display: none;
     font-size: 18px;
     color: #fff;
-    border-bottom: 1px solid #ffb8a3;
     letter-spacing: 1px;
-    padding: 15px; }
+    padding: 20px; }
   .nav-icon {
     position: absolute;
-    font-size: 35px;
+    font-size: 32px;
     padding: 25px;
     right: 0;
     top: 0;
