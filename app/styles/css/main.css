@@ -214,8 +214,7 @@ nav {
     padding: 20px; }
   .nav-icon {
     position: absolute;
-    font-size: 32px;
-    padding: 25px;
+    padding: 20px;
     right: 0;
     top: 0;
     display: block;
@@ -225,6 +224,7 @@ nav {
   .nav-icon:active {
     color: inherit; }
   .nav-icon i {
+    font-size: 28px;
     transition: all .5s ease; }
   nav.responsive .nav-icon {
     color: #fff; } }
