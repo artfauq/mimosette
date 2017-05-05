@@ -141,7 +141,7 @@ function doOnOrientationChange() {
 
 function landscapeProperties() {
     if ($(window).height() < $(window).width()) {
-        $('#maps').css('height', (3 * $(window).outerHeight) / 4 + 'px');
+        $('#maps').css('min-height', '70vh');
         $('.owl-item, .owl-item img').css('max-width', '55vw');
     }
 }
