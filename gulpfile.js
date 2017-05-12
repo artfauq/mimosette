@@ -61,6 +61,7 @@ gulp.task('critical', function() {
         .pipe(critical({
             base: bases.dist,
             inline: true,
+            minify: true,
             css: [bases.dist + './css/main.min.css']
         }))
         .on('error', function(err) {

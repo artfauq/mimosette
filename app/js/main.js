@@ -29,8 +29,8 @@ function initialize() {
     $('.row').addClass('animated').css('opacity', 0);
 
     var waypoints = $('.sub-section, section').waypoint(function(direction) {
-        $(this.element).find('.container').first().find('h3').addClass('fadeInLeft');
-        $(this.element).find('.container').first().find('.row').first().addClass('fadeInRight');
+        $(this.element).find('.container').first().find('h3').addClass('fadeInRight');
+        $(this.element).find('.container').first().find('.row').first().addClass('fadeInLeft');
     }, {
         offset: '50%'
     });
