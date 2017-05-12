@@ -276,12 +276,16 @@ nav {
     bottom: 60px; } }
 
 @font-face {
-  font-family: "Alex Brush";
+  font-family: "Alex";
   src: url("../../fonts/AlexBrush-Regular.ttf") format("truetype"); }
 
 @font-face {
-  font-family: "Josefin Sans";
+  font-family: "Josefin";
   src: url("../../fonts/JosefinSans-Regular.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../../fonts/Roboto-Regular.ttf") format("truetype"); }
 
 html,
 body {
@@ -307,7 +311,7 @@ a {
     text-decoration: none; }
 
 h1 {
-  font-family: 'Alex Brush', cursive;
+  font-family: 'Alex', cursive;
   text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   font-size: 6em;
   font-weight: bold;
@@ -317,7 +321,7 @@ h1 {
 
 h2,
 h3 {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Josefin', sans-serif;
   font-style: normal;
   letter-spacing: 1.2px; }
 

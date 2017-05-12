@@ -3,8 +3,9 @@
 @import 'sections';
 @import 'components/navigation';
 @import 'components/top-button';
-@include font-face('Alex Brush', "../../fonts/AlexBrush-Regular", null, null, ttf);
-@include font-face('Josefin Sans', "../../fonts/JosefinSans-Regular", null, null, ttf);
+@include font-face('Alex', "../../fonts/AlexBrush-Regular", null, null, ttf);
+@include font-face('Josefin', "../../fonts/JosefinSans-Regular", null, null, ttf);
+@include font-face('Roboto', "../../fonts/Roboto-Regular", null, null, ttf);
 html,
 body {
     min-height: 100%;
@@ -38,7 +39,7 @@ a {
 }
 
 h1 {
-    font-family: 'Alex Brush', cursive;
+    font-family: 'Alex', cursive;
     text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     font-size: 6em;
     font-weight: bold;
@@ -49,7 +50,7 @@ h1 {
 
 h2,
 h3 {
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Josefin', sans-serif;
     font-style: normal;
     letter-spacing: 1.2px;
 }

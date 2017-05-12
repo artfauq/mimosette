@@ -25,6 +25,16 @@ $(document).ready(function() {
 });
 
 function initialize() {
+    $('h3').addClass('animated').css('opacity', 0);
+    $('.row').addClass('animated').css('opacity', 0);
+
+    var waypoints = $('.sub-section, section').waypoint(function(direction) {
+        $(this.element).find('.container').first().find('h3').addClass('fadeInLeft');
+        $(this.element).find('.container').first().find('.row').first().addClass('fadeInRight');
+    }, {
+        offset: '50%'
+    });
+
     if (mobileCheck()) {
         landscapeProperties();
     } else {
@@ -42,6 +52,7 @@ function initialize() {
         autoplayHoverPause: true,
         stagePadding: 50,
         nav: true,
+        lazyLoad: true,
         autoWidth: false,
         navText: ['<i class="fa fa-arrow-left" aria-hidden="true"></i>', '<i class="fa fa-arrow-right" aria-hidden="true"></i>'],
         responsive: {
@@ -53,6 +64,8 @@ function initialize() {
             }
         }
     });
+
+
 
     activeNavLink();
     backToTop();
