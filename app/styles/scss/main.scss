@@ -1,6 +1,7 @@
 @import 'mixins';
 @import 'classes';
 @import 'sections';
+@import 'variables';
 @import 'components/navigation';
 @import 'components/top-button';
 @include font-face('Alex', "../../fonts/AlexBrush-Regular", null, null, ttf);
@@ -80,7 +81,7 @@ ul {
     list-style: none;
 }
 
-@media screen and (max-width:992px) {
+@media screen and (max-width: $break-md) {
     h1 {
         font-size: 4em;
     }

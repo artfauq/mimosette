@@ -25,7 +25,7 @@ var paths = {
     fonts: './fonts/**/*.*',
     html: './index.html',
     images: './images/**/*.*',
-    others: ['browserconfig.xml', 'manifest.json', '.htaccess', 'google46e54d9618da9e3c.html', '*.txt'],
+    others: ['*.xml', '*.json', '.htaccess', 'google46e54d9618da9e3c.html', '*.txt'],
     scripts: './js/**/*.js',
     scss: './styles/scss/**/*.scss'
 };

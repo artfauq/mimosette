@@ -1,13 +1,8 @@
+@import 'variables';
 .anchor {
     position: relative;
     display: block;
     visibility: hidden;
-    top: 3px;
-}
-
-section,
-.sub-section {
-    min-height: 112vh;
 }
 
 .fa-envelope {
@@ -32,6 +27,11 @@ section,
     align-items: center;
 }
 
+section,
+.sub-section {
+    min-height: 112vh;
+}
+
 .sub-section {
     &.background-section {
         color: #fff;
@@ -48,7 +48,7 @@ section,
     margin-bottom: 20px;
 }
 
-@media screen and (max-width:992px) {
+@media screen and (max-width: $break-md) {
     .h-align {
         display: block;
         margin-bottom: 20px;

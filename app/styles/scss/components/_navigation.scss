@@ -1,80 +1,111 @@
+@import 'variables';
 nav {
-    border-top: 3px solid rgba(255, 144, 112, 1) !important;
-    display: block;
+    border-top: 3px solid rgba(255, 144, 112, 1);
     font-size: 0;
     padding-right: 5%;
     z-index: 10;
-}
-
-.nav-link {
-    color: #202020;
-    display: inline-block;
-    transition: background-color .1s;
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    padding: 10px 20px
-}
-
-.nav-link:hover:not(.active-link) {
-    background-color: rgba(255, 144, 112, .6);
-    transition: background-color .2s;
-}
-
-.nav-link:hover:not(.active-link),
-.nav-link:focus:not(.active-link),
-.nav-link:active:not(.active-link) {
-    color: #202020;
-}
-
-.active-link {
-    color: #fff !important;
-    background-color: rgba(255, 144, 112, 1);
-    transition: color .15s, background-color .2s
-}
-
-.nav-icon {
-    display: none;
-}
-
-@media screen and (max-width:768px) {
-    nav.responsive {
-        height: 100%;
-        position: fixed;
-        padding: 0;
-        background-color: rgba(0, 0, 0, .7);
-        transition: background-color .5s;
-    }
-    nav.responsive .nav-link {
-        display: block;
-    }
-    .nav-link {
-        width: 100%;
-        text-align: center;
-        text-align: center;
-        display: none;
-        font-size: 18px;
-        color: #fff;
-        letter-spacing: 1px;
-        padding: 20px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    .nav-links {
+        float: right;
+        .nav-link {
+            position: relative;
+            color: #202020;
+            display: inline-block;
+            transition: background-color .1s;
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            padding: 10px 20px;
+            &.active-link {
+                color: #fff;
+                background-color: rgba(255, 144, 112, 1);
+                transition: color .15s, background-color .2s
+            }
+            &:hover:not(.active-link),
+            &:focus:not(.active-link),
+            &:active:not(.active-link) {
+                color: #202020;
+            }
+            &:hover:not(.active-link) {
+                background-color: rgba(255, 144, 112, .6);
+                transition: background-color .2s;
+            }
+        }
     }
     .nav-icon {
+        display: none;
         position: absolute;
-        padding: 20px;
-        right: 0;
         top: 0;
-        display: block;
-        color: rgba(0, 0, 0, .8);
+        padding: 10px;
+        margin: 15px;
+        left: 100%;
+        color: $dark-color;
+        i {
+            font-size: 28px;
+            transition: all .5s ease;
+        }
+        &:hover,
+        &:focus,
+        &:active {
+            color: inherit;
+        }
     }
-    .nav-icon:hover,
-    .nav-icon:focus,
-    .nav-icon:active {
-        color: inherit;
-    }
-    .nav-icon i {
-        font-size: 28px;
-        transition: all .5s ease
-    }
-    nav.responsive .nav-icon {
-        color: #fff;
+}
+
+@media screen and (max-width: $break-xs) {
+    nav {
+        left: -60%;
+        height: 100%;
+        width: 60%;
+        border: none;
+        padding: 0;
+        background-color: $dark-color;
+        transition: all .5s ease;
+        border-right: 3px solid rgba(255, 144, 112, 1);
+        border-top: none;
+        z-index: 100;
+        .nav-links {
+            float: none;
+            .nav-link {
+                display: block;
+                width: 100%;
+                color: #fff;
+                padding: 4vh 5vw;
+                &.active-link {
+                    color: rgba(255, 144, 112, 1);
+                    background-color: inherit;
+                    transition: color .15s;
+                }
+                &:hover:not(.active-link),
+                &:focus:not(.active-link),
+                &:active:not(.active-link) {
+                    color: #fff;
+                }
+                &:hover:not(.active-link) {
+                    background-color: inherit;
+                }
+                &::after {
+                    position: absolute;
+                    content: '';
+                    bottom: 0;
+                    width: 50%;
+                    left: 25%;
+                    height: 1px;
+                    background-color: rgba(255, 144, 112, 1);
+                }
+            }
+        }
+        .nav-icon {
+            display: block;
+        }
+        &.responsive {
+            left: 0;
+            .nav-icon {
+                border-radius: 50%;
+                background-color: rgba(255, 144, 112, 1);
+            }
+        }
     }
 }

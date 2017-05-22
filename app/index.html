@@ -35,18 +35,18 @@
 
 <body id="top">
     <a href="#top" class="cd-top">Top</a>
-    <nav class="clearfix navbar-fixed-top">
+    <nav>
         <a href="#" class="nav-icon" onclick="return false;"><i class="fa fa-navicon"></i></a>
-        <div class="text-right">
+        <div class="nav-links">
             <a href="#lien-home" class="nav-link">Home</a>
-            <a href="#lien-maison" class="nav-link">La Maison</a>
+            <a href="#lien-maison" class="nav-link">La maison</a>
             <a href="#lien-noirmoutier" class="nav-link">Noirmoutier</a>
             <a href="#lien-contact" class="nav-link">Contact</a>
         </div>
     </nav>
 
     <a class="anchor" id="lien-home"></a>
-    <section id="home" class="flexbox">
+    <section id="home" class="flexbox background-section">
         <h1>Mimosette</h1>
         <a href="#lien-maison" id="next-button"></a>
     </section>
@@ -187,7 +187,6 @@
             </div>
         </div>
     </section>
-    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDpnXhlJwZnc3yP8nT2s4vPBfGfCzLJcQk"></script>
     <!--build:js js/vendor.min.js -->
     <script type="text/javascript" src="./bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="./bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
@@ -198,6 +197,7 @@
     <script type="text/javascript" src="./js/main.js"></script>
     <script type="text/javascript" src="./js/maps.js"></script>
     <!-- endbuild -->
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDpnXhlJwZnc3yP8nT2s4vPBfGfCzLJcQk&callback=initMap" async defer></script>
 </body>
 
 </html>

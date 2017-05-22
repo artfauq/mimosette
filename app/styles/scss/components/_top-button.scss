@@ -1,3 +1,4 @@
+@import 'variables';
 .cd-top {
     display: inline-block;
     height: 40px;
@@ -15,36 +16,37 @@
     visibility: hidden;
     opacity: 0;
     transition: opacity .5s 0s, visibility 0s .5s;
+    &.cd-is-visible {
+        visibility: visible;
+        opacity: 1;
+    }
+    &.cd-fade-out {
+        opacity: .5;
+    }
+    &.cd-is-visible,
+    &.cd-fade-out {
+        transition: opacity .5s 0s, visibility 0s 0s;
+    }
 }
 
-.cd-top.cd-is-visible,
-.cd-top.cd-fade-out,
-.no-touch .cd-top:hover {
-    transition: opacity .5s 0s, visibility 0s 0s;
+.no-touch {
+    .cd-top {
+        &:hover {
+            transition: opacity .5s 0s, visibility 0s 0s;
+            background-color: #e86256;
+            opacity: 1;
+        }
+    }
 }
 
-.cd-top.cd-is-visible {
-    visibility: visible;
-    opacity: 1;
-}
-
-.cd-top.cd-fade-out {
-    opacity: .5;
-}
-
-.no-touch .cd-top:hover {
-    background-color: #e86256;
-    opacity: 1;
-}
-
-@media only screen and (min-width:768px) {
+@media only screen and (min-width: $break-xs) {
     .cd-top {
         right: 20px;
         bottom: 50px;
     }
 }
 
-@media only screen and (min-width:992px) {
+@media only screen and (min-width: $break-md) {
     .cd-top {
         height: 50px;
         width: 50px;

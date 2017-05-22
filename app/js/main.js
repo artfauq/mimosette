@@ -30,7 +30,7 @@ function initialize() {
 
     var waypoints = $('.sub-section, section').waypoint(function(direction) {
         $(this.element).find('.container').first().find('h3').addClass('fadeInRight');
-        $(this.element).find('.container').first().find('.row').first().addClass('fadeInLeft');
+        $(this.element).find('.container').first().find('.row').first().addClass('fadeInUp');
     }, {
         offset: '50%'
     });
@@ -52,6 +52,7 @@ function initialize() {
         autoplayHoverPause: true,
         stagePadding: 50,
         nav: true,
+        loop: true,
         lazyLoad: true,
         autoWidth: false,
         navText: ['<i class="fa fa-arrow-left" aria-hidden="true"></i>', '<i class="fa fa-arrow-right" aria-hidden="true"></i>'],
