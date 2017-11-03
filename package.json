@@ -13,6 +13,7 @@
     "gulp-autoprefixer": "^3.1.1",
     "gulp-clean": "^0.3.2",
     "gulp-clean-css": "^3.0.4",
+    "gulp-css-purge": "^1.0.27",
     "gulp-if": "^2.0.2",
     "gulp-imagemin": "^3.2.0",
     "gulp-jshint": "^2.0.4",
@@ -26,9 +27,12 @@
     "run-sequence": "^1.2.2"
   },
   "dependencies": {
+    "animate.css": "^3.5.2",
     "bootstrap": "^3.3.7",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "owl.carousel": "^2.2.0",
+    "waypoints": "^4.0.1"
   },
   "license": "MIT"
 }
