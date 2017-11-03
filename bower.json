@@ -1,0 +1,22 @@
+{
+  "name": "mimosette",
+  "description": "Site web de la location de la maison Mimosette à Noirmoutier.",
+  "authors": [
+    "Arthur Fauquenot"
+  ],
+  "homepage": "https://github.com/arthurfauq/mimosette",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "animate.css": "^3.5.2",
+    "owl.carousel": "^2.2.1",
+    "waypoints": "^4.0.1"
+  },
+  "license": "MIT"
+}

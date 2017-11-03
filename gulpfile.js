@@ -1,21 +1,23 @@
-var gulp = require('gulp');
-var gutil = require('gulp-util');
-var gulpif = require('gulp-if');
-var clean = require('gulp-clean');
-var watch = require('gulp-watch');
-var useref = require('gulp-useref');
-var browserSync = require('browser-sync').create();
-var sass = require('gulp-sass');
-var jshint = require('gulp-jshint');
-var uglify = require('gulp-uglify');
-var imagemin = require('gulp-imagemin');
-var autoprefixer = require('gulp-autoprefixer');
-var cleanCSS = require('gulp-clean-css');
-var runSequence = require('run-sequence');
+var gulp = require('gulp'),
+    gutil = require('gulp-util'),
+    gulpif = require('gulp-if'),
+    clean = require('gulp-clean'),
+    cleanCSS = require('gulp-clean-css'),
+    critical = require('critical').stream,
+    purge = require('gulp-css-purge'),
+    watch = require('gulp-watch'),
+    useref = require('gulp-useref'),
+    browserSync = require('browser-sync').create(),
+    sass = require('gulp-sass'),
+    jshint = require('gulp-jshint'),
+    uglify = require('gulp-uglify'),
+    imagemin = require('gulp-imagemin'),
+    autoprefixer = require('gulp-autoprefixer'),
+    runSequence = require('run-sequence');
 
 var bases = {
-    app: 'app/',
-    dist: 'dist/'
+    app: './app/',
+    dist: './dist/'
 };
 
 var paths = {
@@ -23,7 +25,7 @@ var paths = {
     fonts: './fonts/**/*.*',
     html: './index.html',
     images: './images/**/*.*',
-    others: ['browserconfig.xml', 'manifest.json', '.htaccess', 'google46e54d9618da9e3c.html', 'robots.txt'],
+    others: ['*.xml', '*.json', '.htaccess', 'google46e54d9618da9e3c.html', '*.txt'],
     scripts: './js/**/*.js',
     scss: './styles/scss/**/*.scss'
 };
@@ -49,8 +51,23 @@ gulp.task('scripts', function() {
 gulp.task('styles', function() {
     return gulp.src(paths.css, { cwd: bases.dist })
         .pipe(autoprefixer())
+        .pipe(purge())
         .pipe(cleanCSS())
         .pipe(gulp.dest('css/', { cwd: bases.dist }));
+});
+
+gulp.task('critical', function() {
+    return gulp.src('index.html', { cwd: bases.dist })
+        .pipe(critical({
+            base: bases.dist,
+            inline: true,
+            minify: true,
+            css: [bases.dist + './css/main.min.css']
+        }))
+        .on('error', function(err) {
+            gutil.log(gutil.colors.red(err.message));
+        })
+        .pipe(gulp.dest(bases.dist));
 });
 
 // Copy tasks
@@ -84,7 +101,7 @@ gulp.task('clean:dist', function() {
 
 // Build task
 gulp.task('build', function(cb) {
-    runSequence('clean:dist', ['sass', 'jshint'], ['html', 'fonts', 'others', 'images'], ['styles', 'scripts'], 'serve:dist', cb);
+    runSequence('clean:dist', ['sass', 'jshint'], ['html', 'fonts', 'others', 'images'], ['styles', 'scripts'], 'critical', 'serve:dist', cb);
 });
 
 

@@ -1,68 +1,257 @@
-nav {
-  border-top: 3px solid #ff9070 !important;
+.anchor {
+  position: relative;
   display: block;
-  font-size: 0;
-  padding-right: 5%; }
+  visibility: hidden; }
 
-.nav-link {
-  color: #202020;
-  display: inline-block;
-  transition: background-color .1s;
-  font-family: 'Roboto', sans-serif;
+.fa-envelope {
+  font-size: 20px; }
+
+.fa-mobile {
+  font-size: 32px;
+  margin: 0px 4px; }
+
+.flexbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.h-align {
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+
+section,
+.sub-section {
+  min-height: 112vh; }
+
+.sub-section.background-section {
+  color: #fff; }
+
+.sub-section.no-background-section {
+  position: relative;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.15), 0 -3px 6px rgba(0, 0, 0, 0.16), 0 -3px 6px rgba(0, 0, 0, 0.15); }
+
+.text-zone {
   font-size: 16px;
-  padding: 10px 20px; }
+  line-height: 28px;
+  margin-bottom: 20px; }
 
-.nav-link:hover:not(.active-link) {
-  background-color: rgba(255, 144, 112, 0.6);
-  transition: background-color .2s; }
+@media screen and (max-width: 992px) {
+  .h-align {
+    display: block;
+    margin-bottom: 20px; }
+  .no-background {
+    box-shadow: none; }
+  .text-zone {
+    line-height: 25px; } }
 
-.nav-link:hover:not(.active-link),
-.nav-link:focus:not(.active-link),
-.nav-link:active:not(.active-link) {
-  color: #202020; }
+#home {
+  min-height: 100vh; }
+  #home #next-button {
+    width: 50px;
+    height: 50px;
+    display: block;
+    transition: opacity .3s;
+    animation: nextButtonAnimation 1.5s infinite;
+    opacity: .7;
+    background: url("../../images/icons/arrow-icon-white.png") no-repeat center;
+    background-size: contain; }
+    #home #next-button:hover {
+      transition: opacity .3s;
+      opacity: 1; }
 
-.active-link {
-  color: #fff !important;
-  background-color: #ff9070;
-  transition: color .15s, background-color .2s; }
+@keyframes nextButtonAnimation {
+  0% {
+    transform: translate(0, -30px);
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    transform: translate(0px, 0px);
+    opacity: 0; } }
 
-.nav-icon {
-  display: none; }
+#maison .owl-carousel {
+  max-width: 80vw;
+  margin: auto; }
+  #maison .owl-carousel .owl-item:hover {
+    cursor: -webkit-grab; }
+  #maison .owl-carousel .owl-nav {
+    text-align: center; }
+    #maison .owl-carousel .owl-nav div {
+      display: inline-block;
+      margin: 8px;
+      text-transform: uppercase;
+      border-radius: 5px;
+      padding: 5px 15px;
+      color: #fff;
+      background-color: #ff9070; }
+  #maison .owl-carousel .owl-dots {
+    text-align: center; }
+    #maison .owl-carousel .owl-dots .owl-dot {
+      display: inline-block;
+      margin: 0px 7px;
+      width: 10px;
+      height: 10px;
+      border-radius: 10px;
+      background-color: #ffdfd6; }
+      #maison .owl-carousel .owl-dots .owl-dot.active {
+        background-color: #ff9070; }
+
+#localisation #maps {
+  min-height: 50vh; }
+
+#infos #logo-mimosette {
+  width: 100%; }
+
+@media screen and (max-width: 320px) {
+  #home {
+    background: url("../../images/plages/img_7-320.jpg") no-repeat fixed center;
+    background-size: cover; }
+  #localisation {
+    background: url("../../images/voir/img_1-320.jpg") no-repeat fixed center;
+    background-size: cover; }
+  #plages {
+    background: url("../../images/plages/img_1-320.jpg") no-repeat fixed center;
+    background-size: cover; }
+  #voir {
+    background: url("../../images/plages/img_4-320.jpg") no-repeat fixed center;
+    background-size: cover; } }
+
+@media screen and (max-width: 640px) {
+  #home {
+    background: url("../../images/plages/img_7-640.jpg") no-repeat fixed center;
+    background-size: cover; }
+  #localisation {
+    background: url("../../images/voir/img_1-640.jpg") no-repeat fixed center;
+    background-size: cover; }
+  #plages {
+    background: url("../../images/plages/img_1-640.jpg") no-repeat fixed center;
+    background-size: cover; }
+  #voir {
+    background: url("../../images/plages/img_4-640.jpg") no-repeat fixed center;
+    background-size: cover; } }
+
+@media screen and (max-width: 992px) {
+  #maison .carousel {
+    margin-top: 30px; }
+  #localisation #maps {
+    margin-bottom: 30px; }
+  #infos #logo-mimosette {
+    margin-top: 20px; } }
+
+@media screen and (max-width: 1280px) {
+  #home {
+    background: url("../../images/plages/img_7-1280.jpg") no-repeat fixed center;
+    background-size: cover; }
+  #localisation {
+    background: url("../../images/voir/img_1-1280.jpg") no-repeat fixed center;
+    background-size: cover; }
+  #plages {
+    background: url("../../images/plages/img_1-1280.jpg") no-repeat fixed center;
+    background-size: cover; }
+  #voir {
+    background: url("../../images/plages/img_4-1280.jpg") no-repeat fixed center;
+    background-size: cover; } }
+
+@media screen and (min-width: 1281px) {
+  #home {
+    background: url("../../images/plages/img_7-1600-blurred.jpg") center 0 no-repeat fixed;
+    background-size: cover; }
+  #localisation {
+    background: url("../../images/voir/img_1-1500.jpg") center 0 no-repeat fixed;
+    background-size: cover; }
+  #plages {
+    background: url("../../images/plages/img_1-1500.jpg") no-repeat fixed center;
+    background-size: cover; }
+  #voir {
+    background: url("../../images/plages/img_4-1500.jpg") no-repeat fixed center;
+    background-size: cover; } }
+
+nav {
+  border-top: 3px solid #ff9070;
+  font-size: 0;
+  padding-right: 5%;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%; }
+  nav .nav-links {
+    float: right; }
+    nav .nav-links .nav-link {
+      position: relative;
+      color: #202020;
+      display: inline-block;
+      transition: background-color .1s;
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      padding: 10px 20px; }
+      nav .nav-links .nav-link.active-link {
+        color: #fff;
+        background-color: #ff9070;
+        transition: color .15s, background-color .2s; }
+      nav .nav-links .nav-link:hover:not(.active-link), nav .nav-links .nav-link:focus:not(.active-link), nav .nav-links .nav-link:active:not(.active-link) {
+        color: #202020; }
+      nav .nav-links .nav-link:hover:not(.active-link) {
+        background-color: rgba(255, 144, 112, 0.6);
+        transition: background-color .2s; }
+  nav .nav-icon {
+    display: none;
+    position: absolute;
+    top: 0;
+    padding: 10px;
+    margin: 15px;
+    left: 100%;
+    color: rgba(0, 0, 0, 0.85); }
+    nav .nav-icon i {
+      font-size: 28px;
+      transition: all .5s ease; }
+    nav .nav-icon:hover, nav .nav-icon:focus, nav .nav-icon:active {
+      color: inherit; }
 
 @media screen and (max-width: 768px) {
-  nav.responsive {
+  nav {
+    left: -60%;
     height: 100%;
-    position: fixed;
+    width: 60%;
+    border: none;
     padding: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    transition: background-color .5s; }
-  nav.responsive .nav-link {
-    display: block; }
-  .nav-link {
-    width: 100%;
-    text-align: center;
-    text-align: center;
-    display: none;
-    font-size: 18px;
-    color: #fff;
-    letter-spacing: 1px;
-    padding: 30px; }
-  .nav-icon {
-    position: absolute;
-    font-size: 35px;
-    padding: 25px;
-    right: 0;
-    top: 0;
-    display: block;
-    color: rgba(0, 0, 0, 0.8); }
-  .nav-icon:hover,
-  .nav-icon:focus,
-  .nav-icon:active {
-    color: inherit; }
-  .nav-icon i {
-    transition: all .5s ease; }
-  nav.responsive .nav-icon {
-    color: #fff; } }
+    background-color: rgba(0, 0, 0, 0.85);
+    transition: all .5s ease;
+    border-right: 3px solid #ff9070;
+    border-top: none;
+    z-index: 100; }
+    nav .nav-links {
+      float: none; }
+      nav .nav-links .nav-link {
+        display: block;
+        width: 100%;
+        color: #fff;
+        padding: 4vh 5vw; }
+        nav .nav-links .nav-link.active-link {
+          color: #ff9070;
+          background-color: inherit;
+          transition: color .15s; }
+        nav .nav-links .nav-link:hover:not(.active-link), nav .nav-links .nav-link:focus:not(.active-link), nav .nav-links .nav-link:active:not(.active-link) {
+          color: #fff; }
+        nav .nav-links .nav-link:hover:not(.active-link) {
+          background-color: inherit; }
+        nav .nav-links .nav-link::after {
+          position: absolute;
+          content: '';
+          bottom: 0;
+          width: 50%;
+          left: 25%;
+          height: 1px;
+          background-color: #ff9070; }
+    nav .nav-icon {
+      display: block; }
+    nav.responsive {
+      left: 0; }
+      nav.responsive .nav-icon {
+        border-radius: 50%;
+        background-color: #ff9070; } }
 
 .cd-top {
   display: inline-block;
@@ -81,20 +270,16 @@ nav {
   visibility: hidden;
   opacity: 0;
   transition: opacity .5s 0s, visibility 0s .5s; }
-
-.cd-top.cd-is-visible,
-.cd-top.cd-fade-out,
-.no-touch .cd-top:hover {
-  transition: opacity .5s 0s, visibility 0s 0s; }
-
-.cd-top.cd-is-visible {
-  visibility: visible;
-  opacity: 1; }
-
-.cd-top.cd-fade-out {
-  opacity: .5; }
+  .cd-top.cd-is-visible {
+    visibility: visible;
+    opacity: 1; }
+  .cd-top.cd-fade-out {
+    opacity: .5; }
+  .cd-top.cd-is-visible, .cd-top.cd-fade-out {
+    transition: opacity .5s 0s, visibility 0s 0s; }
 
 .no-touch .cd-top:hover {
+  transition: opacity .5s 0s, visibility 0s 0s;
   background-color: #e86256;
   opacity: 1; }
 
@@ -111,17 +296,33 @@ nav {
     bottom: 60px; } }
 
 @font-face {
-  font-family: "Alex Brush";
+  font-family: "Alex";
   src: url("../../fonts/AlexBrush-Regular.ttf") format("truetype"); }
 
 @font-face {
-  font-family: "Josefin Sans";
+  font-family: "Josefin";
   src: url("../../fonts/JosefinSans-Regular.ttf") format("truetype"); }
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../../fonts/Roboto-Regular.ttf") format("truetype"); }
 
 html,
 body {
-  height: 100%;
   min-height: 100%;
+  height: 100%;
+  width: 100%;
+  padding: 0; }
+
+body {
+  overflow-x: hidden; }
+
+html,
+body,
+h2,
+hr,
+p,
+ul {
   margin: 0; }
 
 a {
@@ -130,24 +331,22 @@ a {
     text-decoration: none; }
 
 h1 {
-  font-family: 'Alex Brush', cursive;
+  font-family: 'Alex', cursive;
   text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   font-size: 6em;
   font-weight: bold;
-  margin: 0;
-  -webkit-transform: rotate(-20deg);
+  margin: auto;
   transform: rotate(-20deg);
   color: rgba(255, 255, 255, 0.95); }
 
 h2,
 h3 {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Josefin', sans-serif;
   font-style: normal;
   letter-spacing: 1.2px; }
 
 h2 {
   font-size: 3.2em;
-  margin: 0;
   text-align: center;
   text-transform: uppercase; }
 
@@ -163,127 +362,9 @@ h4 {
   padding-bottom: 5px;
   border-bottom: 1px solid #ddd; }
 
-hr,
-p {
-  margin: 0; }
-
 ul {
-  margin: 0;
   padding: 0;
   list-style: none; }
-
-.anchor {
-  position: relative;
-  display: block;
-  visibility: hidden; }
-
-section,
-.sub-section {
-  min-height: 112vh; }
-
-.container-fluid {
-  padding: 0; }
-
-.flexbox {
-  display: flex;
-  flex-direction: column;
-  justify-content: center; }
-
-.h-align {
-  display: flex;
-  flex-direction: row;
-  align-items: center; }
-
-.row.flex-box {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  margin-bottom: 30px; }
-
-.shadow {
-  box-shadow: 0 0 15px -2px #444; }
-
-.text-zone {
-  font-size: 16px;
-  line-height: 28px; }
-
-#home {
-  min-height: 100vh;
-  background-size: cover; }
-  #home .text-center {
-    width: 100%;
-    margin: auto; }
-
-#next-button {
-  width: 50px;
-  height: 50px;
-  margin: 20px auto;
-  transition: opacity .3s;
-  animation: nextButtonAnimation 1.5s infinite;
-  opacity: .7;
-  background: url("../../images/icons/arrow-icon-white.png") no-repeat center;
-  background-size: contain; }
-  #next-button:hover {
-    transition: opacity .3s;
-    opacity: 1; }
-
-@keyframes nextButtonAnimation {
-  0% {
-    -webkit-transform: translate(0, -30px);
-    transform: translate(0, -30px);
-    opacity: 0; }
-  50% {
-    opacity: 1; }
-  100% {
-    -webkit-transform: translate(0px, 0px);
-    transform: translate(0px, 0px);
-    opacity: 0; } }
-
-#maps {
-  min-height: 50vh; }
-
-#logo-mimosette {
-  width: 100%; }
-
-.carousel,
-.carousel-inner > .item {
-  height: auto !important; }
-
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-  line-height: 1;
-  display: block;
-  max-width: 100%;
-  height: auto; }
-
-.carousel-container {
-  margin-left: 0; }
-
-.carousel-control.right,
-.carousel-control.left {
-  background-image: none; }
-
-#localisation,
-#plages,
-#voir {
-  position: relative;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.2); }
-
-#localisation::after,
-#plages::after,
-#voir::after {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  content: '';
-  background-size: cover; }
 
 @media screen and (max-width: 992px) {
   h1 {
@@ -293,79 +374,4 @@ section,
     margin-top: 30px; }
   h3 {
     font-size: 2em;
-    margin: 20px 0px; }
-  #home .text-center {
-    padding-bottom: 30px; }
-  .carousel {
-    margin-top: 30px; }
-  #maps {
-    margin-bottom: 30px; }
-  #logo-mimosette {
-    margin-top: 20px; }
-  .h-align {
-    display: block;
-    margin-bottom: 20px; }
-  .shadow {
-    box-shadow: none; }
-  .box {
-    padding-top: 50px;
-    padding-bottom: 50px; }
-  .text-zone {
-    font-size: 16px;
-    line-height: 25px; } }
-
-@media screen and (max-width: 320px) {
-  #home {
-    background: url("../../images/plages/img_7-320.jpg") no-repeat fixed center;
-    background-size: cover; }
-  #localisation::after {
-    background: url("../../images/voir/img_1-320.jpg") no-repeat fixed center;
-    background-size: cover; }
-  #plages::after {
-    background: url("../../images/plages/img_1-320.jpg") no-repeat fixed center;
-    background-size: cover; }
-  #voir::after {
-    background: url("../../images/plages/img_4-320.jpg") no-repeat fixed center;
-    background-size: cover; } }
-
-@media screen and (max-width: 640px) {
-  #home {
-    background: url("../../images/plages/img_7-640.jpg") no-repeat fixed center;
-    background-size: cover; }
-  #localisation::after {
-    background: url("../../images/voir/img_1-640.jpg") no-repeat fixed center;
-    background-size: cover; }
-  #plages::after {
-    background: url("../../images/plages/img_1-640.jpg") no-repeat fixed center;
-    background-size: cover; }
-  #voir::after {
-    background: url("../../images/plages/img_4-640.jpg") no-repeat fixed center;
-    background-size: cover; } }
-
-@media screen and (max-width: 1280px) {
-  #home {
-    background: url("../../images/plages/img_7-1280.jpg") no-repeat fixed center;
-    background-size: cover; }
-  #localisation::after {
-    background: url("../../images/voir/img_1-1280.jpg") no-repeat fixed center;
-    background-size: cover; }
-  #plages::after {
-    background: url("../../images/plages/img_1-1280.jpg") no-repeat fixed center;
-    background-size: cover; }
-  #voir::after {
-    background: url("../../images/plages/img_4-1280.jpg") no-repeat fixed center;
-    background-size: cover; } }
-
-@media screen and (min-width: 1281px) {
-  #home {
-    background: url("../../images/plages/img_7-1600-blurred.jpg") no-repeat fixed center;
-    background-size: cover; }
-  #localisation::after {
-    background: url("../../images/voir/img_1-1500.jpg") no-repeat fixed center;
-    background-size: cover; }
-  #plages::after {
-    background: url("../../images/plages/img_1-1500.jpg") no-repeat fixed center;
-    background-size: cover; }
-  #voir::after {
-    background: url("../../images/plages/img_4-1500.jpg") no-repeat fixed center;
-    background-size: cover; } }
+    margin: 20px 0px; } }

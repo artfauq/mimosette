@@ -1,25 +1,8 @@
-// Google Maps variables
-var myLatLng = {
-    lat: 47.018927,
-    lng: -2.245554
-};
-
-var map = new google.maps.Map(document.getElementById("maps"), {
-    zoom: 13,
-    center: myLatLng,
-    mapTypeId: google.maps.MapTypeId.SATELLITE
-});
-
-var marker = new google.maps.Marker({
-    position: myLatLng,
-    map: map
-});
-
-// Navicon rotation
 var rotation = 0;
 
 $(document).ready(function() {
     $(window).on("load", function() {
+
         initialize();
 
         $('.nav-icon').click(function() {
@@ -32,7 +15,6 @@ $(document).ready(function() {
             }
         });
 
-        // On scroll, change active navigation link and back to top button
         $(window).scroll(function() {
             activeNavLink();
             backToTop();
@@ -43,36 +25,51 @@ $(document).ready(function() {
 });
 
 function initialize() {
+    $('h3').addClass('animated').css('opacity', 0);
+    $('.row').addClass('animated').css('opacity', 0);
+
+    var waypoints = $('.sub-section, section').waypoint(function(direction) {
+        $(this.element).find('.container').first().find('h3').addClass('fadeInRight');
+        $(this.element).find('.container').first().find('.row').first().addClass('fadeInUp');
+    }, {
+        offset: '50%'
+    });
+
     if (mobileCheck()) {
-        if (getMobileOperatingSystem() == 'Android') {
-            var windowHeight = $(window).outerHeight();
-            $('section, .sub-section').css('min-height', windowHeight + (windowHeight / 5) + 'px');
-            $('#maps').css('min-height', windowHeight / 2 + 'px');
-        }
+        landscapeProperties();
+    } else {
+        $('.background-section').each(function() {
+            $(this).parallax("center", 0.25, true);
+        });
     }
 
-    /// Activate responsive nav on click
-    $('.anchor').each(function() {
-        var navHeight = $('nav').css('border-top-width');
-        navHeight = navHeight + 'px';
-        $(this).css('top', navHeight);
-    });
-
-    $('.carousel').carousel();
-
-    $(".left").click(function() {
-        $(this).parent().carousel("prev");
-    });
-
-    $(".right").click(function() {
-        $(this).parent().carousel("next");
+    $('.owl-carousel').owlCarousel({
+        items: 1,
+        startPosition: 0,
+        margin: 10,
+        autoplay: false,
+        autoplayTimeout: 4000,
+        autoplayHoverPause: true,
+        stagePadding: 50,
+        nav: true,
+        loop: true,
+        lazyLoad: true,
+        autoWidth: false,
+        navText: ['<i class="fa fa-arrow-left" aria-hidden="true"></i>', '<i class="fa fa-arrow-right" aria-hidden="true"></i>'],
+        responsive: {
+            0: {
+                stagePadding: 20,
+            },
+            768: {
+                stagePadding: 50
+            }
+        }
     });
 
     activeNavLink();
     backToTop();
 }
 
-// Back to top button fade in and out
 function backToTop() {
     var offset = $('#home').outerHeight();
     var offset_opacity = $('#home').outerHeight() + $('#maison').outerHeight();
@@ -89,7 +86,6 @@ function backToTop() {
     }
 }
 
-// Define the active navigation link
 function activeNavLink() {
     $('section').each(function(index, element) {
         var section = $(element);
@@ -102,7 +98,6 @@ function activeNavLink() {
         if (windowScroll >= sectionTop && windowScroll < sectionBottom) {
             var link_name = '#lien-' + section.attr('id');
 
-            // Search of the link to highlight
             $('.nav-link').each(function(index, element) {
                 var link = $(element);
 
@@ -152,23 +147,17 @@ function mobileCheck() {
     return check;
 }
 
-function getMobileOperatingSystem() {
-    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-    if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
-        return 'iOS';
-    } else if (userAgent.match(/Android/i)) {
+function doOnOrientationChange() {
+    landscapeProperties();
+}
 
-        return 'Android';
-    } else {
-        return 'unknown';
+function landscapeProperties() {
+    if ($(window).height() < $(window).width()) {
+        $('#maps').css('min-height', '70vh');
+        $('.owl-item, .owl-item img').css('max-width', '55vw');
     }
 }
 
-function doOnOrientationChange() {
-    window.location.reload();
-}
-
-// SMOOTH SCROLL
 $(function() {
     $('a[href*="#"]:not([href="#"])').click(function() {
         if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
@@ -184,7 +173,6 @@ $(function() {
     });
 });
 
-// ROTATION FUNCTION
 jQuery.fn.rotate = function(degrees) {
     $(this).css({
         '-webkit-transform': 'rotate(' + degrees + 'deg)',
