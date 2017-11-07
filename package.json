@@ -7,23 +7,33 @@
     "type": "git",
     "url": "https://github.com/arthurfauq/mimosette.git"
   },
+  "scripts": {
+    "build": "gulp build",
+    "serve": "gulp serve"
+  },
   "devDependencies": {
+    "babel-preset-env": "^1.6.1",
     "browser-sync": "^2.18.8",
+    "critical": "^1.0.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
+    "gulp-babel": "^7.0.0",
     "gulp-clean": "^0.3.2",
     "gulp-clean-css": "^3.0.4",
     "gulp-css-purge": "^1.0.27",
+    "gulp-eslint": "^4.0.0",
     "gulp-if": "^2.0.2",
     "gulp-imagemin": "^3.2.0",
-    "gulp-jshint": "^2.0.4",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^2.1.2",
     "gulp-useref": "^3.1.2",
     "gulp-util": "^3.0.8",
     "gulp-watch": "^4.3.11",
-    "jshint": "^2.9.4",
-    "jshint-stylish": "^2.2.1",
     "run-sequence": "^1.2.2"
   },
   "dependencies": {
