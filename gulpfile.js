@@ -36,7 +36,7 @@ var paths = {
 gulp.task('eslint', function () {
   gulp
     .src(paths.scripts, {
-      cwd: bases.app
+      cwd: bases.dist
     })
     .pipe(eslint())
     .pipe(eslint.format())
@@ -58,6 +58,9 @@ gulp.task('scripts', function () {
       cwd: bases.dist
     })
     .pipe(uglify())
+    .on('error', function (err) {
+      gutil.log(gutil.colors.red('[Error]'), err.toString())
+    })
     .pipe(
       gulp.dest('js/', {
         cwd: bases.dist

@@ -1,6 +1,6 @@
 /* eslint no-useless-escape: "off" */
 
-let rotation = 0
+var rotation = 0
 
 $(document).ready(function () {
   $(window).on('load', function () {
@@ -48,12 +48,15 @@ function initialize () {
     items: 1,
     startPosition: 0,
     margin: 10,
-    autoplay: false,
+    autoplay: true,
     autoplayTimeout: 4000,
     autoplayHoverPause: true,
-    stagePadding: 50,
+    autoplaySpeed: 1000,
+    stagePadding: 70,
     nav: true,
-    loop: true,
+    navSpeed: 500,
+    dragEndSpeed: 500,
+    loop: false,
     lazyLoad: true,
     autoWidth: false,
     navText: ['<i class="fa fa-arrow-left" aria-hidden="true"></i>', '<i class="fa fa-arrow-right" aria-hidden="true"></i>'],
@@ -72,9 +75,9 @@ function initialize () {
 }
 
 function backToTop () {
-  let offset = $('#home').outerHeight()
-  let offsetOpacity = $('#home').outerHeight() + $('#maison').outerHeight()
-  let backToTop = $('.cd-top')
+  var offset = $('#home').outerHeight()
+  var offsetOpacity = $('#home').outerHeight() + $('#maison').outerHeight() / 3
+  var backToTop = $('.cd-top')
 
   if ($(this).scrollTop() > offset) {
     backToTop.addClass('cd-is-visible')
@@ -89,18 +92,18 @@ function backToTop () {
 
 function activeNavLink () {
   $('section').each(function (index, element) {
-    let section = $(element)
-    let sectionHeight = section.outerHeight()
-    let sectionTop = section.offset().top - 3
-    let sectionBottom = sectionTop + sectionHeight
+    var section = $(element)
+    var sectionHeight = section.outerHeight()
+    var sectionTop = section.offset().top - 3
+    var sectionBottom = sectionTop + sectionHeight
 
-    let windowScroll = $(window).scrollTop()
+    var windowScroll = $(window).scrollTop()
 
     if (windowScroll >= sectionTop && windowScroll < sectionBottom) {
-      let linkName = '#lien-' + section.attr('id')
+      var linkName = '#lien-' + section.attr('id')
 
       $('.nav-link').each(function (index, element) {
-        let link = $(element)
+        var link = $(element)
 
         if (link.attr('href') === linkName) {
           if (!(link.hasClass('active-link'))) {

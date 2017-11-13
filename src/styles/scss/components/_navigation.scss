@@ -21,7 +21,7 @@ nav {
       &.active-link {
         color: #fff;
         background-color: rgba(255, 144, 112, 1);
-        transition: color .15s, background-color .2s
+        transition: color .15s, background-color .2s;
       }
       &:hover:not(.active-link),
       &:focus:not(.active-link),
@@ -36,29 +36,14 @@ nav {
   }
   .nav-icon {
     display: none;
-    position: absolute;
-    top: 0;
-    padding: 10px;
-    margin: 15px;
-    left: 100%;
-    color: $dark-color;
-    i {
-      font-size: 28px;
-      transition: all .5s ease;
-    }
-    &:hover,
-    &:focus,
-    &:active {
-      color: inherit;
-    }
   }
 }
 
 @media screen and (max-width: $break-xs) {
   nav {
-    left: -60%;
+    left: -250px;
     height: 100%;
-    width: 60%;
+    width: 250px;
     border: none;
     padding: 0;
     background-color: $dark-color;
@@ -77,6 +62,7 @@ nav {
           color: rgba(255, 144, 112, 1);
           background-color: inherit;
           transition: color .15s;
+          font-weight: bold;
         }
         &:hover:not(.active-link),
         &:focus:not(.active-link),
@@ -99,12 +85,44 @@ nav {
     }
     .nav-icon {
       display: block;
+      position: absolute;
+      top: 0;
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      padding: 12px;
+      margin: 15px;
+      left: 100%;
+      color: $dark-color;
+      i {
+        font-size: 26px;
+        transition: all .5s ease;
+      }
+      &:hover,
+      &:focus,
+      &:active {
+        color: inherit;
+      }
+      border-radius: 50%;
+      background-color: rgba(255, 144, 112, .6);
+      .nav-icon-open {
+        display: block;
+      }
+      .nav-icon-close {
+        display: none;
+      }
     }
     &.responsive {
       left: 0;
       .nav-icon {
         border-radius: 50%;
-        background-color: rgba(255, 144, 112, 1);
+        background-color: rgba(255, 144, 112, .85);
+        .nav-icon-open {
+          display: none;
+        }
+        .nav-icon-close {
+          display: block;
+        }
       }
     }
   }

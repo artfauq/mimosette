@@ -1,7 +1,11 @@
 AddDefaultCharset UTF-8
 
+RewriteEngine on
+RewriteCond %{HTTPS} !on
+RewriteRule (.*) https://www.mimosette.fr/
+
 <IfModule mod_mime.c>
-AddCharset UTF-8 .atom .css .js .json .rss .vtt .xml
+  AddCharset UTF-8 .atom .css .js .json .rss .vtt .xml
 </IfModule>
 
 <IfModule mod_headers.c>

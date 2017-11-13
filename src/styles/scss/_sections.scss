@@ -50,16 +50,23 @@
       }
     }
     .owl-dots {
-      text-align: center;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
       .owl-dot {
         display: inline-block;
         margin: 0px 7px;
         width: 10px;
         height: 10px;
+        transition: all .2s;
         border-radius: 10px;
         background-color: lighten(#ff9070, 20%);
         &.active {
+          transition: all .2s;
           background-color: #ff9070;
+          width: 12px;
+          height: 12px;
         }
       }
     }
