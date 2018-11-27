@@ -46,12 +46,12 @@
     .owl-nav {
       text-align: center;
 
-      div {
+      button {
         display: inline-block;
         margin: 8px;
         text-transform: uppercase;
         border-radius: 5px;
-        padding: 5px 15px;
+        padding: 5px 15px !important;
         color: #fff;
         background-color: #ff9070;
       }
