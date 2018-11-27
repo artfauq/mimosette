@@ -1,6 +1,7 @@
+/* eslint-disable no-unused-vars */
 /* global google */
 
-(() => {
+function loadMap() {
   const myLatLng = {
     lat: 47.018927,
     lng: -2.245554
@@ -16,4 +17,4 @@
     position: myLatLng,
     map
   });
-})();
+}

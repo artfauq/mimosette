@@ -9,8 +9,8 @@
   },
   "scripts": {
     "build": "gulp build",
-    "serve": "gulp serve",
-    "lint": "eslint --fix \"**.js\" && stylelint \"src/styles/**\" --fix"
+    "start": "gulp serve",
+    "lint": "eslint --fix \"src/js/**.js\" && stylelint \"src/styles/**.scss\" --fix"
   },
   "husky": {
     "hooks": {
@@ -20,42 +20,41 @@
   "dependencies": {
     "animate.css": "^3.5.2",
     "bootstrap": "^4.1.2",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-config-prettier": "^3.3.0",
     "font-awesome": "^4.7.0",
-    "husky": "^1.2.0",
+    "imagemin-svgo": "^7.0.0",
     "jquery": "^3.2.1",
-    "jquery-parallax.js": "^1.5.0",
     "owl.carousel": "^2.2.0",
-    "prettier": "^1.15.2",
-    "prettier-stylelint": "^0.4.2",
-    "pretty-quick": "^1.8.0",
-    "stylelint-config-prettier": "^4.0.0",
-    "stylelint-config-standard": "^18.2.0",
     "waypoints": "^4.0.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
     "browser-sync": "^2.18.8",
     "critical": "^1.0.0",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-node": "^5.2.1",
-    "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-standard": "^3.0.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
+    "gulp-babel": "^8.0.0",
     "gulp-clean": "^0.3.2",
-    "gulp-clean-css": "^3.10.0",
-    "gulp-css-purge": "^1.0.27",
+    "gulp-clean-css": "^3.0.4",
     "gulp-eslint": "^4.0.0",
     "gulp-if": "^2.0.2",
-    "gulp-imagemin": "^5.0.3",
+    "gulp-imagemin": "^3.2.0",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^2.1.2",
     "gulp-useref": "^3.1.2",
     "gulp-util": "^3.0.8",
     "gulp-watch": "^4.3.11",
+    "husky": "^1.2.0",
+    "prettier": "^1.15.2",
+    "pretty-quick": "^1.8.0",
     "run-sequence": "^1.2.2",
-    "stylelint": "^9.8.0"
+    "stylelint": "^9.8.0",
+    "stylelint-config-prettier": "^4.0.0",
+    "stylelint-config-standard": "^18.2.0"
   },
   "license": "MIT"
 }

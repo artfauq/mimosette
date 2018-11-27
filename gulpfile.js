@@ -1,9 +1,9 @@
 const gulp = require('gulp');
 const gutil = require('gulp-util');
+const babel = require('gulp-babel');
 const clean = require('gulp-clean');
 const cleanCSS = require('gulp-clean-css');
 const critical = require('critical').stream;
-const purge = require('gulp-css-purge');
 const useref = require('gulp-useref');
 const eslint = require('gulp-eslint');
 const browserSync = require('browser-sync').create();
@@ -52,10 +52,8 @@ gulp.task('scripts', () =>
     .src(paths.scripts, {
       cwd: bases.dist
     })
+    .pipe(babel({ presets: ['@babel/env'] }))
     .pipe(uglify())
-    .on('error', err => {
-      gutil.log(gutil.colors.red('[Error]'), err.toString());
-    })
     .pipe(
       gulp.dest('js/', {
         cwd: bases.dist
@@ -69,7 +67,6 @@ gulp.task('styles', () =>
       cwd: bases.dist
     })
     .pipe(autoprefixer())
-    .pipe(purge())
     .pipe(cleanCSS())
     .pipe(
       gulp.dest('css/', {
@@ -148,7 +145,7 @@ gulp.task('build', cb => {
     ['sass', 'eslint'],
     ['html', 'fonts', 'others', 'images'],
     ['styles', 'scripts'],
-    // 'critical',
+    'critical',
     'serve:dist',
     cb
   );

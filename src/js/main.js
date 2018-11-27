@@ -13,7 +13,7 @@ function rotateIcon() {
 function responsiveNav() {
   const nav = $('nav');
 
-  nav.find('div').each(() => {
+  nav.find('div').each(function pullRight() {
     if ($(this).hasClass('pull-right')) {
       $(this).removeClass('pull-right');
     }
@@ -106,7 +106,7 @@ function initialize() {
     .css('opacity', 0);
 
   $('.sub-section, section').waypoint(
-    () => {
+    function animate() {
       $(this.element)
         .find('.container')
         .first()
@@ -119,15 +119,15 @@ function initialize() {
         .first()
         .addClass('fadeInUp');
     },
-    {
-      offset: '50%'
-    }
+    { offset: '50%' }
   );
 
   if (mobileCheck()) {
     landscapeProperties();
   } else {
-    $('.background-section').each(() => $(this).parallax('center', 0.15, true));
+    $('.background-section').each(function parallax() {
+      $(this).parallax('center', 0.15, true);
+    });
   }
 
   $('.owl-carousel').owlCarousel({
@@ -190,7 +190,7 @@ $(document).ready(() => {
   });
 });
 
-$(() => {
+$(function ready() {
   $('a[href*="#"]:not([href="#"])').click(() => {
     if (
       window.location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') &&
@@ -200,12 +200,7 @@ $(() => {
       target = target.length ? target : $(`[name=${this.hash.slice(1)}]`);
 
       if (target.length) {
-        $('html, body').animate(
-          {
-            scrollTop: target.offset().top
-          },
-          1000
-        );
+        $('html, body').animate({ scrollTop: target.offset().top }, 1000);
         return false;
       }
     }
@@ -214,7 +209,7 @@ $(() => {
   });
 });
 
-jQuery.fn.rotate = degrees => {
+jQuery.fn.rotate = function rotate(degrees) {
   $(this).css({
     '-webkit-transform': `rotate(${degrees}deg)`,
     '-moz-transform': `rotate(${degrees}deg)`,
