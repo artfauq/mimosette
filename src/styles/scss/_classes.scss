@@ -1,4 +1,5 @@
 @import 'variables';
+
 .anchor {
   position: relative;
   display: block;
@@ -11,7 +12,7 @@
 
 .fa-mobile {
   font-size: 32px;
-  margin: 0px 4px;
+  margin: 0 4px;
 }
 
 .flexbox {
@@ -36,9 +37,11 @@ section,
   &.background-section {
     color: #fff;
   }
+
   &.no-background-section {
     position: relative;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.15), 0 -3px 6px rgba(0, 0, 0, 0.16), 0 -3px 6px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.15), 0 -3px 6px rgba(0, 0, 0, 0.16),
+      0 -3px 6px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -53,9 +56,11 @@ section,
     display: block;
     margin-bottom: 20px;
   }
+
   .no-background {
     box-shadow: none;
   }
+
   .text-zone {
     line-height: 25px;
   }

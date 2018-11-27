@@ -9,12 +9,34 @@
   },
   "scripts": {
     "build": "gulp build",
-    "serve": "gulp serve"
+    "serve": "gulp serve",
+    "lint": "eslint --fix \"**.js\" && stylelint \"src/styles/**\" --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "dependencies": {
+    "animate.css": "^3.5.2",
+    "bootstrap": "^4.1.2",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.3.0",
+    "font-awesome": "^4.7.0",
+    "husky": "^1.2.0",
+    "jquery": "^3.2.1",
+    "jquery-parallax.js": "^1.5.0",
+    "owl.carousel": "^2.2.0",
+    "prettier": "^1.15.2",
+    "prettier-stylelint": "^0.4.2",
+    "pretty-quick": "^1.8.0",
+    "stylelint-config-prettier": "^4.0.0",
+    "stylelint-config-standard": "^18.2.0",
+    "waypoints": "^4.0.1"
   },
   "devDependencies": {
     "browser-sync": "^2.18.8",
     "critical": "^1.0.0",
-    "eslint-config-standard": "^10.2.1",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-node": "^5.2.1",
     "eslint-plugin-promise": "^3.6.0",
@@ -32,15 +54,8 @@
     "gulp-useref": "^3.1.2",
     "gulp-util": "^3.0.8",
     "gulp-watch": "^4.3.11",
-    "run-sequence": "^1.2.2"
-  },
-  "dependencies": {
-    "animate.css": "^3.5.2",
-    "bootstrap": "^4.1.2",
-    "font-awesome": "^4.7.0",
-    "jquery": "^3.2.1",
-    "owl.carousel": "^2.2.0",
-    "waypoints": "^4.0.1"
+    "run-sequence": "^1.2.2",
+    "stylelint": "^9.8.0"
   },
   "license": "MIT"
 }

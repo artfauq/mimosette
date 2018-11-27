@@ -1,16 +1,18 @@
 #home {
   min-height: 100vh;
+
   #next-button {
     width: 50px;
     height: 50px;
     display: block;
-    transition: opacity .3s;
+    transition: opacity 0.3s;
     animation: nextButtonAnimation 1.5s infinite;
-    opacity: .7;
+    opacity: 0.7;
     background: url('../../images/icons/arrow-icon-white.png') no-repeat center;
     background-size: contain;
+
     &:hover {
-      transition: opacity .3s;
+      transition: opacity 0.3s;
       opacity: 1;
     }
   }
@@ -21,11 +23,13 @@
     transform: translate(0, -30px);
     opacity: 0;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
-    transform: translate(0px, 0px);
+    transform: translate(0, 0);
     opacity: 0;
   }
 }
@@ -34,11 +38,14 @@
   .owl-carousel {
     max-width: 80vw;
     margin: auto;
+
     .owl-item:hover {
       cursor: -webkit-grab;
     }
+
     .owl-nav {
       text-align: center;
+
       div {
         display: inline-block;
         margin: 8px;
@@ -49,21 +56,24 @@
         background-color: #ff9070;
       }
     }
+
     .owl-dots {
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
+
       .owl-dot {
         display: inline-block;
-        margin: 0px 7px;
+        margin: 0 7px;
         width: 10px;
         height: 10px;
-        transition: all .2s;
+        transition: all 0.2s;
         border-radius: 10px;
         background-color: lighten(#ff9070, 20%);
+
         &.active {
-          transition: all .2s;
+          transition: all 0.2s;
           background-color: #ff9070;
           width: 12px;
           height: 12px;
@@ -85,55 +95,63 @@
   }
 }
 
-@media screen and (max-width:320px) {
+@media screen and (max-width: 320px) {
   #home {
     background: url('../../images/plages/img_7-320.jpg') no-repeat fixed center;
     background-size: cover;
   }
+
   #localisation {
     background: url('../../images/voir/img_1-320.jpg') no-repeat fixed center;
     background-size: cover;
   }
+
   #plages {
     background: url('../../images/plages/img_1-320.jpg') no-repeat fixed center;
     background-size: cover;
   }
+
   #voir {
     background: url('../../images/plages/img_4-320.jpg') no-repeat fixed center;
     background-size: cover;
   }
 }
 
-@media screen and (max-width:640px) {
+@media screen and (max-width: 640px) {
   #home {
     background: url('../../images/plages/img_7-640.jpg') no-repeat fixed center;
     background-size: cover;
   }
+
   #localisation {
     background: url('../../images/voir/img_1-640.jpg') no-repeat fixed center;
     background-size: cover;
   }
+
   #plages {
     background: url('../../images/plages/img_1-640.jpg') no-repeat fixed center;
     background-size: cover;
   }
+
   #voir {
     background: url('../../images/plages/img_4-640.jpg') no-repeat fixed center;
     background-size: cover;
   }
 }
 
-@media screen and (max-width:992px) {
+@media screen and (max-width: 992px) {
   #maison {
     .carousel {
       margin-top: 30px;
     }
   }
+
   #localisation {
     #maps {
       margin-bottom: 30px;
     }
   }
+
   #infos {
     #logo-mimosette {
       margin-top: 20px;
@@ -141,38 +159,44 @@
   }
 }
 
-@media screen and (max-width:1280px) {
+@media screen and (max-width: 1280px) {
   #home {
     background: url('../../images/plages/img_7-1280.jpg') no-repeat fixed center;
     background-size: cover;
   }
+
   #localisation {
     background: url('../../images/voir/img_1-1280.jpg') no-repeat fixed center;
     background-size: cover;
   }
+
   #plages {
     background: url('../../images/plages/img_1-1280.jpg') no-repeat fixed center;
     background-size: cover;
   }
+
   #voir {
     background: url('../../images/plages/img_4-1280.jpg') no-repeat fixed center;
     background-size: cover;
   }
 }
 
-@media screen and (min-width:1281px) {
+@media screen and (min-width: 1281px) {
   #home {
     background: url('../../images/plages/img_7-1600-blurred.jpg') center 0 no-repeat fixed;
     background-size: cover;
   }
+
   #localisation {
     background: url('../../images/voir/img_1-1500.jpg') center 0 no-repeat fixed;
     background-size: cover;
   }
+
   #plages {
     background: url('../../images/plages/img_1-1500.jpg') no-repeat fixed center;
     background-size: cover;
   }
+
   #voir {
     background: url('../../images/plages/img_4-1500.jpg') no-repeat fixed center;
     background-size: cover;

@@ -4,9 +4,11 @@
 @import 'variables';
 @import 'components/navigation';
 @import 'components/top-button';
-@include font-face('Alex', "../../fonts/AlexBrush-Regular", null, null, ttf);
-@include font-face('Josefin', "../../fonts/JosefinSans-Regular", null, null, ttf);
-@include font-face('Roboto', "../../fonts/Roboto-Regular", null, null, ttf);
+
+@include font-face('Alex', '../../fonts/AlexBrush-Regular', null, null, ttf);
+@include font-face('Josefin', '../../fonts/JosefinSans-Regular', null, null, ttf);
+@include font-face('Roboto', '../../fonts/Roboto-Regular', null, null, ttf);
+
 html,
 body {
   min-height: 100%;
@@ -30,6 +32,7 @@ ul {
 
 a {
   color: inherit;
+
   &,
   &:hover,
   &:focus,
@@ -46,7 +49,7 @@ h1 {
   font-weight: bold;
   margin: auto;
   transform: rotate(-20deg);
-  color: rgba(255, 255, 255, .95);
+  color: rgba(255, 255, 255, 0.95);
 }
 
 h2,
@@ -85,12 +88,14 @@ ul {
   h1 {
     font-size: 4em;
   }
+
   h2 {
     font-size: 2.5em;
     margin-top: 50px;
   }
+
   h3 {
     font-size: 2em;
-    margin: 20px 0px;
+    margin: 20px 0;
   }
 }
