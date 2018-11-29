@@ -19,7 +19,7 @@ const bases = {
 };
 
 const paths = {
-  css: './css/**/*.css',
+  css: './styles/css/**/*.css',
   fonts: './fonts/**/*.*',
   html: './*.html',
   images: './images/**/*.*',
@@ -44,7 +44,7 @@ gulp.task('sass', () =>
       cwd: bases.app
     })
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest(`${bases.app}/styles/css/`))
+    .pipe(gulp.dest(`${bases.app}styles/css/`))
 );
 
 gulp.task('scripts', () =>
@@ -69,7 +69,7 @@ gulp.task('styles', () =>
     .pipe(autoprefixer())
     .pipe(cleanCSS())
     .pipe(
-      gulp.dest('css/', {
+      gulp.dest('styles/css/', {
         cwd: bases.dist
       })
     )
@@ -85,7 +85,7 @@ gulp.task('critical', () =>
         base: bases.dist,
         inline: true,
         minify: true,
-        css: [`${bases.dist}./css/main.min.css`]
+        css: [`${bases.dist}styles/css/main.min.css`]
       })
     )
     .on('error', err => {
@@ -100,7 +100,7 @@ gulp.task('fonts', () =>
     .src(paths.fonts, {
       cwd: bases.app
     })
-    .pipe(gulp.dest(`${bases.dist}/fonts`))
+    .pipe(gulp.dest(`${bases.dist}fonts`))
 );
 
 gulp.task('html', () =>
@@ -118,7 +118,7 @@ gulp.task('images', () =>
       cwd: bases.app
     })
     .pipe(imagemin())
-    .pipe(gulp.dest(`${bases.dist}/images`))
+    .pipe(gulp.dest(`${bases.dist}images`))
 );
 
 gulp.task('others', () =>
