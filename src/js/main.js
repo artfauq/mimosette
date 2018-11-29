@@ -1,14 +1,5 @@
+/* eslint-disable prefer-arrow-callback */
 /* eslint-disable no-useless-escape */
-
-let rotation = 0;
-
-function rotateIcon() {
-  rotation = rotation === 90 ? 0 : 90;
-  $('.nav-icon')
-    .find('i')
-    .first()
-    .rotate(rotation);
-}
 
 function responsiveNav() {
   const nav = $('nav');
@@ -21,10 +12,8 @@ function responsiveNav() {
 
   if (nav.hasClass('responsive')) {
     nav.removeClass('responsive');
-    rotateIcon();
   } else {
     nav.addClass('responsive');
-    rotateIcon();
   }
 }
 
@@ -52,13 +41,13 @@ function backToTop() {
   const offsetOpacity = $('#home').outerHeight() + $('#maison').outerHeight() / 3;
   const button = $('.cd-top');
 
-  if ($(this).scrollTop() > offset) {
+  if ($(window).scrollTop() > offset) {
     button.addClass('cd-is-visible');
   } else {
     button.removeClass('cd-is-visible cd-fade-out');
   }
 
-  if ($(this).scrollTop() > offsetOpacity) {
+  if ($(window).scrollTop() > offsetOpacity) {
     button.addClass('cd-fade-out');
   }
 }
@@ -146,8 +135,8 @@ function initialize() {
     lazyLoad: true,
     autoWidth: false,
     navText: [
-      '<i class="fa fa-arrow-left" aria-hidden="true"></i>',
-      '<i class="fa fa-arrow-right" aria-hidden="true"></i>'
+      '<i class="fas fa-arrow-left" aria-hidden="true"></i>',
+      '<i class="fas fa-arrow-right" aria-hidden="true"></i>'
     ],
     responsive: {
       0: {
@@ -191,7 +180,8 @@ $(document).ready(() => {
 });
 
 $(function ready() {
-  $('a[href*="#"]:not([href="#"])').click(() => {
+  // eslint-disable-next-line func-names
+  $('a[href*="#"]:not([href="#"])').click(function() {
     if (
       window.location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') &&
       window.location.hostname === this.hostname
@@ -208,14 +198,3 @@ $(function ready() {
     return null;
   });
 });
-
-jQuery.fn.rotate = function rotate(degrees) {
-  $(this).css({
-    '-webkit-transform': `rotate(${degrees}deg)`,
-    '-moz-transform': `rotate(${degrees}deg)`,
-    '-ms-transform': `rotate(${degrees}deg)`,
-    transform: `rotate(${degrees}deg)`
-  });
-
-  return $(this);
-};
