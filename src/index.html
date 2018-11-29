@@ -27,13 +27,14 @@
     <link rel="mask-icon" href="./images/safari-pinned-tab.svg" color="#5bbad5" />
     <link rel="shortcut icon" href="./images/favicon.ico" />
 
-    <!-- build:css css/vendor.min.css -->
+    <!-- build:css styles/css/vendor.min.css -->
+    <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/solid.css" />
+    <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css" />
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../node_modules/animate.css/animate.min.css" />
     <link rel="stylesheet" href="../node_modules/owl.carousel/dist/assets/owl.carousel.min.css" />
-    <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css" />
     <!-- endbuild -->
-    <!-- build:css css/main.min.css -->
+    <!-- build:css styles/css/main.min.css -->
     <link rel="stylesheet" href="./styles/css/main.css" />
     <!-- endbuild -->
   </head>
@@ -42,7 +43,7 @@
     <a href="#top" class="cd-top">Top</a>
     <nav>
       <a href="#" class="nav-icon" onclick="return false;">
-        <i class="fa fa-navicon nav-icon-open"></i> <i class="fa fa-close nav-icon-close"></i>
+        <i class="fas fa-bars nav-icon-open"></i> <i class="fas fa-times nav-icon-close"></i>
       </a>
 
       <div class="nav-links">
@@ -68,7 +69,7 @@
           <h2>La maison</h2>
           <h3>Description</h3>
           <div class="row h-align">
-            <div class="col-xs-12 col-md-6">
+            <div class="col-12 col-md-6">
               <p class="text-zone">
                 Située à 50 mètres de la Plage de la Clère, dans le village du Vieil, la maison est une typique maison
                 vendéenne blanche aux volets bleus. Dans la maison, au rdc salon / salle à manger ouvrant sur terrasse
@@ -80,7 +81,8 @@
                 avec placards, une avec un lit de 140 et l'autre avec un lit de 90 et un lit de 120.
               </p>
             </div>
-            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-0 col-lg-6 col-lg-offset-0">
+
+            <div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-0">
               <div class="owl-carousel">
                 <img src="./images/maison/img_1-640.jpg" alt="Slide image - House" />
                 <img src="./images/maison/img_2-640.jpg" alt="Slide image - House" />
@@ -104,10 +106,9 @@
         <div class="container">
           <h3>Localisation</h3>
           <div class="row h-align">
-            <div class="col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-0 col-lg-6 col-lg-offset-0">
-              <div id="maps"></div>
-            </div>
-            <div class="col-xs-12 col-md-6">
+            <div class="col-12 col-sm-10 offset-sm-1 col-md-6 offset-md-0"><div id="maps"></div></div>
+
+            <div class="col-12 col-md-6">
               <p class="text-zone">
                 Île de Noirmoutier, village du Vieil, plage de la Clère. Au calme, maison familiale à 50 mètres de la
                 plage de la Clère, sur un terrain de 450 m². <br /><br />Accès à la mer par un chemin au pied de la
@@ -128,7 +129,7 @@
         <div class="container">
           <h3>Infos pratiques</h3>
           <div class="row h-align">
-            <div class="col-xs-12 col-md-6">
+            <div class="col-12 col-md-8">
               <p class="text-zone">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
@@ -137,7 +138,7 @@
                 deserunt mollit anim id est laborum.
               </p>
             </div>
-            <div class="col-xs-6 col-md-3 m-auto">
+            <div class="col-8 offset-2 col-md-4 offset-md-0">
               <img src="./images/logo-mimosette-noir.png" alt="Ecriture Mimosette" id="logo-mimosette" />
             </div>
           </div>
@@ -154,7 +155,7 @@
           <h2>Noirmoutier</h2>
           <h3>Les plages</h3>
           <div class="row h-align">
-            <div class="col-xs-12 col-md-6">
+            <div class="col-12 col-md-8">
               <p class="text-zone">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
@@ -177,7 +178,7 @@
         <div class="container">
           <h3>La ville</h3>
           <div class="row h-align">
-            <div class="col-xs-12 col-md-6">
+            <div class="col-12 col-md-8">
               <p class="text-zone">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
@@ -196,7 +197,7 @@
         <div class="container">
           <h3>A voir</h3>
           <div class="row h-align">
-            <div class="col-xs-12 col-md-6">
+            <div class="col-12 col-md-8">
               <p class="text-zone">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
@@ -216,16 +217,16 @@
       <div class="container">
         <h3>Contactez-nous</h3>
         <div class="row">
-          <div class="col-sm-12 col-md-4">
+          <div class="col-12 col-md-4">
             <h4>Olivia Fauquenot</h4>
-            <p class="text-zone"><i class="fa fa-mobile" aria-hidden="true"></i> +33 6 61 18 01 29</p>
+            <p class="text-zone"><i class="fas fa-mobile" aria-hidden="true"></i> +33 6 61 18 01 29</p>
             <p class="text-zone">
               <a href="mailto:ofauquenot@yahoo.fr?Subject=Contact-Mimosette">
-                <i class="fa fa-envelope" aria-hidden="true"></i> &nbsp;ofauquenot@yahoo.fr</a
+                <i class="fas fa-envelope" aria-hidden="true"></i> &nbsp;ofauquenot@yahoo.fr</a
               >
             </p>
           </div>
-          <div class="col-sm-12 col-md-8">
+          <div class="col-12 col-md-8">
             <h4>Liens utiles</h4>
             <p class="text-zone">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
