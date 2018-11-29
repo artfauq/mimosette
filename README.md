@@ -4,6 +4,8 @@
 
 Website of a house renting in Noirmoutier, France.
 
+Link: [GitHub Pages](https://arthurfauq.github.io/mimosette/)
+
 ## Screenshots
 
 ![alt text](https://github.com/arthurfauq/mimosette/blob/master/screenshots/mimosette-home.png 'Home page')
@@ -18,13 +20,31 @@ Install the required dependencies
 npm install
 ```
 
-Then, build the application
+### Development
+
+Run the following command to start a local development server
+
+```
+npm run start
+```
+
+### Build
+
+Run the following command to compile the sources into a `dist/` directory
 
 ```
 npm run build
 ```
 
-To see the application running, navigate to [localhost:3000](http://localhost:3000)
+### Deploy
+
+After running `npm run build`, run the following command to deploy the application to a gh-pages branch
+
+```
+npm run deploy
+```
+
+More info: [gh-pages package](https://www.npmjs.com/package/gh-pages)
 
 ## License
 
