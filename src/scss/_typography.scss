@@ -2,6 +2,6 @@
 
 @import 'mixins';
 
-@include font-face('Alex', '../../fonts/AlexBrush-Regular', null, null, ttf);
-@include font-face('Josefin', '../../fonts/JosefinSans-Regular', null, null, ttf);
-@include font-face('Roboto', '../../fonts/Roboto-Regular', null, null, ttf);
+@include font-face('Alex', '../fonts/AlexBrush-Regular', null, null, ttf);
+@include font-face('Josefin', '../fonts/JosefinSans-Regular', null, null, ttf);
+@include font-face('Roboto', '../fonts/Roboto-Regular', null, null, ttf);
