@@ -1,14 +1,14 @@
 @font-face {
   font-family: "Alex";
-  src: url("../../fonts/AlexBrush-Regular.ttf") format("truetype"); }
+  src: url("../fonts/AlexBrush-Regular.ttf") format("truetype"); }
 
 @font-face {
   font-family: "Josefin";
-  src: url("../../fonts/JosefinSans-Regular.ttf") format("truetype"); }
+  src: url("../fonts/JosefinSans-Regular.ttf") format("truetype"); }
 
 @font-face {
   font-family: "Roboto";
-  src: url("../../fonts/Roboto-Regular.ttf") format("truetype"); }
+  src: url("../fonts/Roboto-Regular.ttf") format("truetype"); }
 
 html,
 body {
