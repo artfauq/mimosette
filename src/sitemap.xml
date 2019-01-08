@@ -6,8 +6,11 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
+
 <url>
-  <loc>http://www.mimosette.fr/</loc>
-  <lastmod>2017-05-16T12:57:31+00:00</lastmod>
+  <loc>https://arthurfauq.github.io/mimosette/</loc>
+  <lastmod>2019-01-08T09:32:48+00:00</lastmod>
 </url>
+
+
 </urlset>
