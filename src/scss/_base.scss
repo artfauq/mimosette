@@ -1,13 +1,4 @@
-@import 'mixins';
-@import 'classes';
-@import 'sections';
-@import 'variables';
-@import 'components/navigation';
-@import 'components/top-button';
-
-@include font-face('Alex', '../../fonts/AlexBrush-Regular', null, null, ttf);
-@include font-face('Josefin', '../../fonts/JosefinSans-Regular', null, null, ttf);
-@include font-face('Roboto', '../../fonts/Roboto-Regular', null, null, ttf);
+// Declare here your base styles
 
 html,
 body {

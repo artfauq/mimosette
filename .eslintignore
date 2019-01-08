@@ -1,2 +1,5 @@
-/node_modules
-/dist
+# npm
+node_modules/
+
+# Compiled output
+dist/

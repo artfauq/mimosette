@@ -1,3 +1,14 @@
-/src/styles/css
-/node_modules
-/dist
+# Visual Studio Code
+.settings/
+.vscode/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependencies
+node_modules/
+
+# Compiled output
+dist
