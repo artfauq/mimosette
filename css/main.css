@@ -84,13 +84,6 @@ ul {
   display: block;
   visibility: hidden; }
 
-.fa-envelope {
-  font-size: 20px; }
-
-.fa-mobile {
-  font-size: 32px;
-  margin: 0 4px; }
-
 .flexbox {
   display: -ms-flexbox;
   display: flex;
@@ -122,8 +115,7 @@ section,
 
 .text-zone {
   font-size: 16px;
-  line-height: 28px;
-  margin-bottom: 20px; }
+  line-height: 28px; }
 
 @media screen and (max-width: 992px) {
   .h-align {
